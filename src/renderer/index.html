@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob:; worker-src 'self' blob:; style-src 'self' 'unsafe-inline';">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHP Electron Editor</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../../node_modules/monaco-editor/min/vs/editor/editor.main.css">
+  <link rel="stylesheet" href="../../node_modules/notyf/notyf.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="toolbar">
+      <button id="openProject">Abrir Projeto</button>
+      <button id="newFile" disabled>Novo Arquivo</button>
+      <button id="saveFile" disabled>Salvar</button>
+	  <div class="toolbar-section project-tools">
+	  	<button id="exportProjectBtn" class="toolbar-button">Exportar Projeto</button>
+	  	<button id="importProjectBtn" class="toolbar-button">Importar Projeto</button>
+	  </div>
+	  <button id="aboutButton" class="toolbar-button">Sobre</button>
+	  <button id="closeApp" >✕</button>
+      <div class="ai-tools">
+        <button id="analyzeCodeBtn" disabled>Analisar Código</button>
+        <button id="generateCodeBtn">Gerar Código</button>
+        <button id="documentCodeBtn" disabled>Documentar</button>
+        <button id="explainCodeBtn" disabled>Explicar</button>
+      </div>
+    </div>
+    
+    <div class="main-container">
+      <div class="sidebar">
+        <div class="project-title">Nenhum projeto aberto</div>
+        <div id="fileExplorer" class="file-explorer"></div>
+      </div>
+      
+      <div class="editor-container">
+        <div class="tabs-container" id="tabsContainer">
+        </div>
+        <div class="code-editor-container" id="codeEditorContainer">
+          <div class="editor-placeholder">Abra um projeto para começar a editar</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <span>Terminal</span>
+      </div>
+	  <pre id="terminal" class="terminal"></pre>
+	  <div class="terminal-input-container">
+	  	<input type="text" id="terminalInput" placeholder="Digite um comando e pressione Enter">
+	  </div>
+    </div>
+  </div>
+  
+  <div id="fileNameModal" class="modal">
+  	<div class="modal-content">
+  		<h3>Nome do Arquivo</h3>
+  		<input type="text" id="fileNameInput" placeholder="Digite o nome do arquivo" />
+  		<button id="submitFileName">Criar Arquivo</button>
+  		<button id="cancelFileName">Cancelar</button>
+  	</div>
+  </div>
+  
+  <div id="renameFileModal" class="modal">
+  	<div class="modal-content">
+  		<h3>Renomear Arquivo</h3>
+  		<input type="text" id="newFileNameInput" placeholder="Novo nome do arquivo">
+  		<button id="renameFileConfirm">Renomear</button>
+  		<button id="renameFileCancel">Cancelar</button>
+  	</div>
+  </div>
+ 
+  <script src="../../node_modules/monaco-editor/min/vs/loader.js"> </script>
+  <script src="../../node_modules/notyf/notyf.min.js"> </script>
+  <script>
+  require.config({
+	  paths: {
+		  'vs': '../../node_modules/monaco-editor/min/vs'
+	  }
+  });
+  const notyf = new Notyf();
+  </script>
+  <script src="editor.js"></script>
+  <script src="terminal.js"></script>
+  <script src="ai-manager.js"></script>
+  <script src="commands-database.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
