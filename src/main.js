@@ -12,6 +12,26 @@ let terminalProcess = null;
 const store = new Store();
 const packageJson = require('../package.json');
 
+let appLanguage = store.get('appLanguage', 'pt-BR');
+let translations = {};
+
+function loadTranslations(langCode) {
+  try {
+    const filePath = path.join(__dirname, 'i18n', `${langCode}.json`);
+    if (fs.existsSync(filePath)) {
+      const content = fs.readFileSync(filePath, 'utf8');
+      translations = JSON.parse(content);
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.error(`Error ${langCode}:`, error);
+    return false;
+  }
+}
+
+loadTranslations(appLanguage);
+
 // Janela principal
 let mainWindow;
 
@@ -30,8 +50,7 @@ function createWindow() {
   // Carregar o arquivo HTML
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
   mainWindow.setMenu(null);
-  // Abrir DevTools em desenvolvimento
-  //mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // Evento quando a janela é fechada
   mainWindow.on('closed', () => {
@@ -517,5 +536,77 @@ ipcMain.handle('show-open-dialog', async (event, options) => {
   } catch (error) {
     console.error('Erro no open dialog:', error);
     return null;
+  }
+});
+
+// Ler arquivo de idioma
+ipcMain.handle('read-language-file', async (event, langCode) => {
+  try {
+    const filePath = path.join(__dirname, 'i18n', `${langCode}.json`);
+    const content = await fs.promises.readFile(filePath, 'utf8');
+    return JSON.parse(content);
+  } catch (error) {
+    console.error(`Erro ao ler arquivo de idioma ${langCode}:`, error);
+    return null;
+  }
+});
+
+// Obter idiomas disponíveis
+ipcMain.handle('get-available-languages', async () => {
+  try {
+    const i18nDir = path.join(__dirname, 'i18n');
+    const files = await fs.promises.readdir(i18nDir);
+    
+    // Filtrar apenas arquivos JSON e extrair códigos de idioma
+    const languages = files
+      .filter(file => file.endsWith('.json'))
+      .map(file => {
+        const langCode = path.basename(file, '.json');
+        
+        // Tentar ler o arquivo para obter o nome do idioma
+        try {
+          const content = fs.readFileSync(path.join(i18nDir, file), 'utf8');
+          const data = JSON.parse(content);
+          return {
+            code: langCode,
+            name: data.languageName || langCode
+          };
+        } catch (err) {
+          return { code: langCode, name: langCode };
+        }
+      });
+    
+    return languages;
+  } catch (error) {
+    console.error('Erro ao listar idiomas disponíveis:', error);
+    return [];
+  }
+});
+
+// Definir idioma do aplicativo
+ipcMain.handle('set-app-language', async (event, langCode) => {
+  try {
+    // Verificar se o arquivo de idioma existe
+    const filePath = path.join(__dirname, 'i18n', `${langCode}.json`);
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`Arquivo de idioma não encontrado: ${langCode}`);
+    }
+    
+    // Salvar a preferência de idioma
+    appLanguage = langCode;
+    store.set('appLanguage', langCode);
+    
+    // Carregar as traduções
+    loadTranslations(langCode);
+    
+    // Atualizar o título da janela se houver uma tradução para isso
+    if (mainWindow && translations.appTitle) {
+      mainWindow.setTitle(translations.appTitle);
+    }
+    
+    return true;
+  } catch (error) {
+    console.error('Erro ao definir idioma do aplicativo:', error);
+    return false;
   }
 });

@@ -1,0 +1,172 @@
+{
+  "ui": {
+    "openProject": "Abrir Projeto",
+    "newFile": "Novo Arquivo",
+    "saveFile": "Salvar",
+    "exportProject": "Exportar Projeto",
+    "importProject": "Importar Projeto",
+    "about": "Sobre",
+    "analyzeCode": "Analisar Código",
+    "generateCode": "Gerar Código",
+    "documentCode": "Documentar",
+    "explainCode": "Explicar",
+    "terminal": "Terminal",
+    "projectTitle": "Nenhum projeto aberto",
+    "editorPlaceholder": "Abra um projeto para começar a editar",
+    "terminalPlaceholder": "Digite um comando e pressione Enter",
+    "fileName": "Nome do Arquivo",
+    "createFile": "Criar Arquivo",
+    "cancel": "Cancelar",
+    "renameFile": "Renomear Arquivo",
+    "newFileName": "Novo nome do arquivo",
+    "rename": "Renomear"
+  },
+  "modals": {
+    "createFile": "Nome do Arquivo",
+    "renameFile": "Renomear Arquivo"
+  },
+  "messages": {
+    "fileSaved": "Arquivo salvo com sucesso!",
+    "fileCreated": "Arquivo criado:",
+    "errorCreatingFile": "Erro ao criar o arquivo:",
+    "confirmDelete": "Tem certeza de que deseja excluir este arquivo?",
+    "projectExported": "Projeto exportado com sucesso!",
+    "projectImported": "Projeto importado com sucesso!",
+    "exportFailed": "Falha ao exportar o projeto",
+    "importFailed": "Falha ao importar o projeto",
+    "openProjectFirst": "Abra um projeto antes de exportar"
+  },
+  "alerts": {
+    "aimanager_loaded": "AIManager Carregado",
+    "savefile": "Arquivo salvo com sucesso!",
+    "createdfile": "Arquivo criado:",
+    "error_createfile": "Erro ao criar o arquivo",
+    "renomear": "Adicionar Nome",
+    "delete": "Eliminar",
+    "delete_title": "Tem certeza de que deseja excluir este arquivo?",
+    "open_project_title": "Abra um projeto para começar a editar",
+    "about_project_title": "PHP Electron Editor 💡",
+    "logout": "Deseja sair do editor? Alterações não salvas serão perdidas."
+  },
+  "buttons": {
+    "renomear": "AIManager Carregado"
+  },
+  "ai": {
+    "analyzecodepanel": "A IA analisará o código quanto a boas práticas, possíveis bugs, melhorias de desempenho e segurança."
+  },
+  "exportProject": {
+    "no_project_selected": "Nenhum projeto selecionado para exportar",
+    "project_exported_success": "Projeto exportado com sucesso!",
+    "project_export_failed": "Falha ao exportar o projeto",
+    "export_project_title": "Exportar Projeto"
+  },
+  "importProject": {
+    "project_imported_success": "Projeto importado com sucesso!",
+    "project_import_failed": "Falha ao importar o projeto",
+    "import_project_title": "Importar Projeto",
+    "select_directory_for_import": "Selecione o diretório para importar o projeto"
+  },
+  "setupProjectButtons": {
+    "open_project_before_export": "Abra um projeto antes de exportar"
+  },
+  "aboutDialog": {
+    "about_title": "Sobre",
+    "app_info": "Informações do Aplicativo",
+    "system_info": "Informações do Sistema",
+    "tech_versions": "Versões de Tecnologia",
+    "ai_engine_info": "Motor de IA Embarcado",
+    "app_name": "Nome",
+    "app_version": "Versão",
+    "app_author": "Autor",
+    "app_company": "Empresa",
+    "platform": "Plataforma",
+    "architecture": "Arquitetura",
+    "build": "Build",
+    "electron_version": "Electron",
+    "node_version": "Node.js",
+    "chrome_version": "Chrome",
+    "ai_core": "Núcleo IA",
+    "ai_intelligence": "Inteligência",
+    "ai_innovation": "Inovação",
+    "close_button": "Fechar"
+  },
+  "commands": {
+    "terminal": {
+      "cd": "Muda o diretório atual",
+      "mkdir": "Cria um novo diretório",
+      "rmdir": "Remove um diretório vazio",
+      "rm": "Remove arquivos ou diretórios",
+      "dir": "Lista arquivos e pastas (Windows)",
+      "ls": "Lista arquivos e pastas (Linux/Mac)",
+      "cls": "Limpa a tela (Windows)",
+      "clear": "Limpa a tela (Linux/Mac)"
+    },
+    "php": {
+      "php_v": "Exibe a versão do PHP",
+      "php_m": "Lista os módulos instalados do PHP",
+      "php_server": "Inicia um servidor embutido do PHP",
+      "php_run": "Executa um script PHP"
+    },
+    "composer": {
+      "composer_install": "Instala as dependências do projeto",
+      "composer_update": "Atualiza as dependências do projeto",
+      "composer_require": "Adiciona pacotes como dependências",
+      "composer_remove": "Remove pacotes do projeto",
+      "composer_autoload": "Atualiza o autoloader",
+      "composer_create": "Cria um novo projeto",
+      "composer_validate": "Valida o composer.json",
+      "composer_show": "Mostra informações sobre pacotes"
+    },
+    "laravel": {
+      "artisan_optimize": "Otimiza a performance da aplicação",
+      "artisan_optimize_clear": "Limpa os caches otimizados",
+      "artisan_config_cache": "Cria cache das configurações",
+      "artisan_route_cache": "Cria cache das rotas",
+      "artisan_view_cache": "Compila todas as views Blade",
+      "artisan_event_cache": "Cacheia eventos e listeners",
+      "artisan_make_request": "Cria uma nova Form Request",
+      "artisan_make_middleware": "Cria um novo Middleware",
+      "artisan_make_job": "Cria um novo Job",
+      "artisan_make_event": "Cria um novo Evento",
+      "artisan_make_listener": "Cria um novo Listener",
+      "artisan_make_command": "Cria um novo comando Artisan",
+      "artisan_schedule_run": "Executa tarefas agendadas",
+      "artisan_queue_work": "Processa jobs da fila",
+      "artisan_queue_restart": "Reinicia os workers da fila",
+      "artisan_down": "Coloca a aplicação em modo de manutenção",
+      "artisan_up": "Tira a aplicação do modo de manutenção"
+    },
+    "codeigniter": {
+      "spark_serve": "Inicia o servidor de desenvolvimento",
+      "spark_migrate": "Executa as migrações",
+      "spark_migrate_rollback": "Reverte a última migração",
+      "spark_make_controller": "Cria um novo controller",
+      "spark_make_model": "Cria um novo model",
+      "spark_make_migration": "Cria uma nova migration",
+      "spark_make_seeder": "Cria um novo seeder",
+      "spark_db_seed": "Executa os seeders",
+      "spark_cache_clear": "Limpa o cache do aplicativo",
+      "spark_routes": "Lista todas as rotas registradas"
+    },
+    "git": {
+      "git_init": "Inicializa um repositório Git",
+      "git_clone": "Clona um repositório Git",
+      "git_add": "Adiciona arquivos ao staging",
+      "git_commit": "Cria um novo commit",
+      "git_push": "Envia commits para o repositório remoto",
+      "git_pull": "Baixa e integra mudanças do repositório remoto",
+      "git_status": "Mostra o status do repositório",
+      "git_branch": "Lista, cria ou deleta branches",
+      "git_checkout": "Muda para outro branch ou commit"
+    },
+    "npm": {
+      "npm_install": "Instala dependências",
+      "npm_update": "Atualiza dependências",
+      "npm_run": "Executa scripts definidos no package.json",
+      "npm_run_dev": "Executa o script de desenvolvimento",
+      "npm_run_build": "Executa o script de build para produção",
+      "yarn_install": "Instala dependências (Yarn)",
+      "yarn_run": "Executa scripts com Yarn"
+    }
+  }
+}

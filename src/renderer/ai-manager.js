@@ -86,7 +86,7 @@ class AIManager {
     // Conteúdo do painel
     content.innerHTML = `
       <p>Analisando o arquivo: <strong>${activeFile.name}</strong></p>
-      <p>A IA analisará o código quanto a boas práticas, possíveis bugs, melhorias de desempenho e segurança.</p>
+      <p>${window.__('ai.analyzecodepanel') || 'A IA analisará o código quanto a boas práticas, possíveis bugs, melhorias de desempenho e segurança.'}</p>
     `;
     
     // Botões do rodapé

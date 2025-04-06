@@ -41,5 +41,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
   showOpenDialog: (options) => ipcRenderer.invoke('show-open-dialog', options),
   getAppInfo: () => ipcRenderer.invoke('get-app-info'),
   getAppVersion: () => ipcRenderer.invoke('get-app-version'),
+  
+  readLanguageFile: (langCode) => ipcRenderer.invoke('read-language-file', langCode),
+  getAvailableLanguages: () => ipcRenderer.invoke('get-available-languages'),
+  setAppLanguage: (langCode) => ipcRenderer.invoke('set-app-language', langCode),
+  
   closeApp: () => ipcRenderer.invoke('close-app')
 });

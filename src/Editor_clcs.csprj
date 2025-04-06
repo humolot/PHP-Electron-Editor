@@ -1,0 +1,261 @@
+
+<codestructure version="2.1.0">
+<phptree>
+</phptree>
+<jstree>
+<treenode node="AIManager;JS:Class Name;1504364636;f0;1;1;473;;;;vpos;;v;;aObject_;;c;;r;;d16,1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="constructor;JS:Function Name;1504364636;f0;2;3;9;;;;vpos;;v;;aObject_;;c;;r;;d16,2;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="createPanel;JS:Function Name;1504364636;f0;26;3;67;;;;vpos;;v;;aObject_;;c;;r;;d21,26;;b0,0;;m0;;e0;;i0;;o;;k;;ltitle;;p;;x;;n">
+</treenode>
+<treenode node="openAnalyzeCodePanel;JS:Function Name;1504364636;f7;80;3;147;;;;vpos;;v;;aObject_;;c;;r;;d31,80;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="openDocumentCodePanel;JS:Function Name;1504364636;f7;276;3;377;;;;vpos;;v;;aObject_;;c;;r;;d32,276;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="openExplainCodePanel;JS:Function Name;1504364636;f7;380;3;472;;;;vpos;;v;;aObject_;;c;;r;;d31,380;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="openGenerateCodePanel;JS:Function Name;1504364636;f0;150;3;273;;;;vpos;;v;;aObject_;;c;;r;;d26,150;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="setupEventListeners;JS:Function Name;1504364636;f0;11;3;16;;;;vpos;;v;;aObject_;;c;;r;;d24,11;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="showLoading;JS:Function Name;1504364636;f0;70;3;77;;;;vpos;;v;;aObject_;;c;;r;;d53,70;;b0,0;;m0;;e0;;i0;;o;;k;;lcontainer;;pmessage;;p;;x;;x;;n">
+</treenode>
+<treenode node="updateButtonState;JS:Function Name;1504364636;f0;19;3;23;;;;vpos;;v;;aObject_;;c;;r;;d56,19;;b0,0;;m0;;e0;;i0;;o;;k;;lisFileOpen;;pcurrentFilePath;;p;;x;;x;;n">
+</treenode>
+<treenode node="analyzeCodeBtn;JS:JS Var Name;1504364636;f9;3;23;3;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="async;JS:JS Var Name;1504364636;f2;80;7;80;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="documentCodeBtn;JS:JS Var Name;1504364636;f9;5;24;5;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="explainCodeBtn;JS:JS Var Name;1504364636;f9;6;23;6;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="generateCodeBtn;JS:JS Var Name;1504364636;f9;4;24;4;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+<treenode node="AIService;JS:Class Name;3992380147;f0;15;1;194;;;;vpos;;v;;aObject_;;c;;r;;d16,15;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="analyzeCode;JS:Function Name;3992380147;f7;26;3;74;;;;vpos;;v;;aObject_;;c;;r;;d36,26;;b0,0;;m0;;e0;;i0;;o;;k;;lfilePath;;pcode;;p;;x;;x;;n">
+</treenode>
+<treenode node="constructor;JS:Function Name;3992380147;f0;16;3;18;;;;vpos;;v;;aObject_;;c;;r;;d16,16;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="documentCode;JS:Function Name;3992380147;f7;112;3;152;;;;vpos;;v;;aObject_;;c;;r;;d45,112;;b0,0;;m0;;e0;;i0;;o;;k;;lcode;;planguage;;p;;x;;x;;n">
+</treenode>
+<treenode node="explainCode;JS:Function Name;3992380147;f7;155;3;193;;;;vpos;;v;;aObject_;;c;;r;;d44,155;;b0,0;;m0;;e0;;i0;;o;;k;;lcode;;planguage;;p;;x;;x;;n">
+</treenode>
+<treenode node="generateCode;JS:Function Name;3992380147;f7;77;3;109;;;;vpos;;v;;aObject_;;c;;r;;d52,77;;b0,0;;m0;;e0;;i0;;o;;k;;ldescription;;planguage;;p;;x;;x;;n">
+</treenode>
+<treenode node="isAvailable;JS:Function Name;3992380147;f0;21;3;23;;;;vpos;;v;;aObject_;;c;;r;;d16,21;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="async;JS:JS Var Name;3992380147;f2;26;7;26;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="model;JS:JS Var Name;3992380147;f9;17;14;17;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+<treenode node="I18nManager;JS:Class Name;1659980218;f0;0;1;143;;;;vpos;;v;;aObject_;;c;;r;;d18,0;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="changeLanguage;JS:Function Name;1659980218;f7;65;3;84;;;;vpos;;v;;aObject_;;c;;r;;d33,65;;b0,0;;m0;;e0;;i0;;o;;k;;llangCode;;p;;x;;n">
+</treenode>
+<treenode node="constructor;JS:Function Name;1659980218;f0;1;3;12;;;;vpos;;v;;aObject_;;c;;r;;d16,1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="getLanguageName;JS:Function Name;1659980218;f0;86;3;89;;;;vpos;;v;;aObject_;;c;;r;;d28,86;;b0,0;;m0;;e0;;i0;;o;;k;;llangCode;;p;;x;;n">
+</treenode>
+<treenode node="init;JS:Function Name;1659980218;f7;14;3;29;;;;vpos;;v;;aObject_;;c;;r;;d15,14;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="loadTranslations;JS:Function Name;1659980218;f7;31;3;46;;;;vpos;;v;;aObject_;;c;;r;;d35,31;;b0,0;;m0;;e0;;i0;;o;;k;;llangCode;;p;;x;;n">
+</treenode>
+<treenode node="setupLanguageSelector;JS:Function Name;1659980218;f0;117;3;142;;;;vpos;;v;;aObject_;;c;;r;;d26,117;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="translate;JS:Function Name;1659980218;f0;48;3;63;;;;vpos;;v;;aObject_;;c;;r;;d17,48;;b0,0;;m0;;e0;;i0;;o;;k;;lkey;;p;;x;;n">
+</treenode>
+<treenode node="updateUI;JS:Function Name;1659980218;f0;91;3;115;;;;vpos;;v;;aObject_;;c;;r;;d13,91;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="async;JS:JS Var Name;1659980218;f2;14;7;14;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="currentLanguage;JS:JS Var Name;1659980218;f9;2;24;2;;;;vposString;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="supportedLanguages;JS:JS Var Name;1659980218;f9;4;27;4;;;;vposArray;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="translations;JS:JS Var Name;1659980218;f9;3;26;3;;;;vposObject_;;v;;a;;r;;d24,3;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+<treenode node="TerminalManager;JS:Class Name;3745451894;f0;1;21;1;;;;vpos;;v;;aObject_;;c;;r;;d22,1;;b0,0;;m0;;e0;;i0;;o;;k;;lterminalElement;;p;;x;;n">
+<treenode node="constructor;JS:Function Name;3745451894;f0;2;3;10;;;;vpos;;v;;aObject_;;c;;r;;d31,2;;b0,0;;m0;;e0;;i0;;o;;k;;lterminalElement;;p;;x;;n">
+</treenode>
+<treenode node="initialize;JS:Function Name;3745451894;f7;12;41;111;;;;vpos;;v;;aObject_;;c;;r;;d38,12;;b0,0;;m0;;e0;;i0;;o;;k;;lworkingDir;;p;;x;;n">
+<treenode node="outputHandler;JS:Function Name;3745451894;f11;34;41;111;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;levent;;pdata;;p;;x;;x;;n">
+<treenode node="data;JS:Function Name;3745451894;f34;34;7;51;;;;vpos;;v;;a;;r;;d35,49;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+</treenode>
+<treenode node="async;JS:JS Var Name;3745451894;f2;12;7;12;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="exitHandler;JS:JS Var Name;3745451894;f9;9;20;9;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="isInitialized;JS:JS Var Name;3745451894;f9;5;22;5;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="outputHandler;JS:JS Var Name;3745451894;f9;8;22;8;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminal;JS:JS Var Name;3745451894;f9;4;17;4;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminalElement;JS:JS Var Name;3745451894;f9;3;24;3;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+<treenode node="closeAppBtn;JS:Function Name;1429129259;f6;0;4;7;;;;vpos;;v;;a;;r;;d53,2;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="closeTab;JS:Function Name;1422221740;f0;431;1;470;;;;vpos;;v;;aObject_;;c;;r;;d25,431;;b0,0;;m0;;e0;;i0;;o;;k;;lindex;;p;;x;;n">
+</treenode>
+<treenode node="createEditor;JS:Function Name;1422221740;f0;473;1;554;;;;vpos;;v;;aObject_;;c;;r;;d41,473;;b0,0;;m0;;e0;;i0;;o;;k;;lfilePath;;pcontent;;p;;x;;x;;n">
+</treenode>
+<treenode node="createFile;JS:Function Name;1422221740;f5;161;1;169;;;;vpos;;v;;aObject_;;c;;r;;d45,161;;b0,0;;m0;;e0;;i0;;o;;k;;ldirPath;;pfileName;;p;;x;;x;;n">
+</treenode>
+<treenode node="createFileExplorerItem;JS:Function Name;1422221740;f0;172;1;302;;;;vpos;;v;;aObject_;;c;;r;;d38,172;;b0,0;;m0;;e0;;i0;;o;;k;;litem;;p;;x;;n">
+</treenode>
+<treenode node="createNewFile;JS:Function Name;1422221740;f5;563;1;590;;;;vpos;;v;;aObject_;;c;;r;;d48,563;;b0,0;;m0;;e0;;i0;;o;;k;;ldirPath;;pfileName;;p;;x;;x;;n">
+</treenode>
+<treenode node="createTab;JS:Function Name;1422221740;f0;375;1;398;;;;vpos;;v;;aObject_;;c;;r;;d32,375;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;pindex;;p;;x;;x;;n">
+</treenode>
+<treenode node="createWindow;JS:Function Name;2021250080;f0;36;1;57;;;;vpos;;v;;aObject_;;c;;r;;d24,36;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="deleteFile;JS:Function Name;1422221740;f5;634;1;663;;;;vpos;;v;;aObject_;;c;;r;;d32,634;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;p;;x;;n">
+</treenode>
+<treenode node="exportProject;JS:Function Name;1422221740;f5;774;1;795;;;;vpos;;v;;aObject_;;c;;r;;d31,774;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="getActiveEditorContent;JS:Function Name;1422221740;f0;557;1;560;;;;vpos;;v;;aObject_;;c;;r;;d34,557;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="getProjectName;JS:Function Name;1422221740;f0;136;1;139;;;;vpos;;v;;aObject_;;c;;r;;d30,136;;b0,0;;m0;;e0;;i0;;o;;k;;lpath;;p;;x;;n">
+</treenode>
+<treenode node="handleOpenProject;JS:Function Name;1422221740;f5;82;1;101;;;;vpos;;v;;aObject_;;c;;r;;d35,82;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="handleSaveFile;JS:Function Name;1422221740;f5;103;1;112;;;;vpos;;v;;aObject_;;c;;r;;d32,103;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="importProject;JS:Function Name;1422221740;f5;797;1;827;;;;vpos;;v;;aObject_;;c;;r;;d31,797;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="initAIManager;JS:Function Name;1422221740;f0;66;1;79;;;;vpos;;v;;aObject_;;c;;r;;d25,66;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="loadSessionState;JS:Function Name;1422221740;f5;691;1;726;;;;vpos;;v;;aObject_;;c;;r;;d34,691;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="loadTranslations;JS:Function Name;2021250080;f0;16;1;29;;;;vpos;;v;;aObject_;;c;;r;;d36,16;;b0,0;;m0;;e0;;i0;;o;;k;;llangCode;;p;;x;;n">
+</treenode>
+<treenode node="openFile;JS:Function Name;1422221740;f5;341;1;372;;;;vpos;;v;;aObject_;;c;;r;;d50,341;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;psetAsActive;;ptrue;;p;;x;;x;;x;;n">
+</treenode>
+<treenode node="printToTerminal;JS:Function Name;1422221740;f0;767;1;772;;;;vpos;;v;;aObject_;;c;;r;;d34,767;;b0,0;;m0;;e0;;i0;;o;;k;;lmessage;;p;;x;;n">
+</treenode>
+<treenode node="readDirectoryStructure;JS:Function Name;2021250080;f5;228;1;249;;;;vpos;;v;;aObject_;;c;;r;;d43,228;;b0,0;;m0;;e0;;i0;;o;;k;;ldir;;p;;x;;n">
+</treenode>
+<treenode node="renameFile;JS:Function Name;1422221740;f5;593;1;632;;;;vpos;;v;;aObject_;;c;;r;;d41,593;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;pnewName;;p;;x;;x;;n">
+</treenode>
+<treenode node="renderFileExplorer;JS:Function Name;1422221740;f0;142;1;148;;;;vpos;;v;;aObject_;;c;;r;;d35,142;;b0,0;;m0;;e0;;i0;;o;;k;;lfiles;;p;;x;;n">
+</treenode>
+<treenode node="saveSessionState;JS:Function Name;1422221740;f5;668;1;688;;;;vpos;;v;;aObject_;;c;;r;;d34,668;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="setActiveFile;JS:Function Name;1422221740;f0;401;1;428;;;;vpos;;v;;aObject_;;c;;r;;d30,401;;b0,0;;m0;;e0;;i0;;o;;k;;lindex;;p;;x;;n">
+</treenode>
+<treenode node="setupAboutButton;JS:Function Name;1422221740;f0;915;1;921;;;;vpos;;v;;aObject_;;c;;r;;d28,915;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="setupEventListeners;JS:Function Name;1422221740;f0;61;1;64;;;;vpos;;v;;aObject_;;c;;r;;d31,61;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="setupNewFileModal;JS:Function Name;1422221740;f0;304;1;338;;;;vpos;;v;;aObject_;;c;;r;;d0,305;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="setupProjectButtons;JS:Function Name;1422221740;f0;829;1;844;;;;vpos;;v;;aObject_;;c;;r;;d31,829;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="showAboutDialog;JS:Function Name;1422221740;f5;846;1;912;;;;vpos;;v;;aObject_;;c;;r;;d33,846;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="showContextMenu;JS:Function Name;1422221740;f0;729;1;764;;;;vpos;;v;;aObject_;;c;;r;;d43,729;;b0,0;;m0;;e0;;i0;;o;;k;;levent;;pmenuItems;;p;;x;;x;;n">
+<treenode node="closeMenu;JS:Function Name;1422221740;f36;758;3;763;;;;vpos;;v;;aObject_;;c;;r;;d59,758;;b0,0;;m0;;e0;;i0;;o;;k;;le;;p;;x;;n">
+</treenode>
+</treenode>
+<treenode node="showSuggestions;JS:Function Name;1429129259;f0;75;3;135;;;;vpos;;v;;aObject_;;c;;r;;d2,76;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminalInput;JS:Function Name;1429129259;f8;138;3;145;;;;vpos;;v;;a;;r;;d48,140;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="toggleTerminal;JS:Function Name;1422221740;f0;114;1;133;;;;vpos;;v;;aObject_;;c;;r;;d26,114;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="AdmZip;JS:JS Var Name;2021250080;f6;6;12;6;;;;vposadm-zip;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="Store;JS:JS Var Name;2021250080;f6;3;11;3;;;;vposelectron-store;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="activeFile;JS:JS Var Name;1422221740;f4;15;14;15;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="aiManager;JS:JS Var Name;1422221740;f4;18;13;18;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="aiService;JS:JS Var Name;2021250080;f6;7;15;7;;;;vpos./ai-service;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="appLanguage;JS:JS Var Name;2021250080;f4;13;15;13;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="autocompleteContainer;JS:JS Var Name;1429129259;f8;52;29;52;;;;vposElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="className;JS:JS Var Name;1429129259;f24;53;33;53;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="style;JS:JS Var Name;1429129259;f24;54;29;54;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="cssText;JS:JS Var Name;1429129259;f30;54;37;54;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+</treenode>
+<treenode node="codeEditorContainer;JS:JS Var Name;1422221740;f6;3;25;3;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="commandHistory;JS:JS Var Name;1429129259;f6;41;20;41;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="currentProject;JS:JS Var Name;1422221740;f4;13;18;13;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="editorCommands;JS:JS Var Name;3483075542;f6;0;20;0;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="editors;JS:JS Var Name;1422221740;f4;16;11;16;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="fileExplorer;JS:JS Var Name;1422221740;f6;1;18;1;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="fs;JS:JS Var Name;3992380147;f6;1;8;1;;2021250080;f6;2;8;2;;;;vposfs;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="historyIndex;JS:JS Var Name;1429129259;f6;42;18;42;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="mainWindow;JS:JS Var Name;2021250080;f4;34;14;34;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="monaco;JS:JS Var Name;2345265396;f4;8;10;8;;;;vposwindow.monaco;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="newFileBtn;JS:JS Var Name;1422221740;f6;5;16;5;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="notyf;JS:JS Var Name;1267604192;f8;93;13;93;;;;vposNotyf;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="oldContainer;JS:JS Var Name;1429129259;f8;46;20;46;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="openFiles;JS:JS Var Name;1422221740;f4;14;13;14;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="openProjectBtn;JS:JS Var Name;1422221740;f6;4;20;4;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="openai;JS:JS Var Name;3992380147;f4;6;10;6;;;;vposOpenAI;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="os;JS:JS Var Name;2021250080;f6;4;8;4;;;;vposos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="packageJson;JS:JS Var Name;2021250080;f6;12;17;12;;;;vpos../package.json;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="path;JS:JS Var Name;3992380147;f6;2;10;2;;2021250080;f6;1;10;1;;;;vpospath;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="projectTitleEl;JS:JS Var Name;1422221740;f6;10;20;10;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="saveFileBtn;JS:JS Var Name;1422221740;f6;6;17;6;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="selectedIndex;JS:JS Var Name;1429129259;f6;73;19;73;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="store;JS:JS Var Name;2021250080;f6;11;11;11;;;;vposStore;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="tabsContainer;JS:JS Var Name;1422221740;f6;2;19;2;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminal;JS:JS Var Name;1422221740;f6;9;14;9;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminalContainer;JS:JS Var Name;1422221740;f6;8;23;8;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminalInputContainer;JS:JS Var Name;1429129259;f8;45;30;45;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="style;JS:JS Var Name;1429129259;f25;69;30;69;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="position;JS:JS Var Name;1429129259;f31;69;39;69;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</treenode>
+</treenode>
+<treenode node="terminalManager;JS:JS Var Name;1422221740;f4;17;19;17;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="terminalProcess;JS:JS Var Name;2021250080;f4;8;19;8;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="toggleTerminalBtn;JS:JS Var Name;1422221740;f6;7;23;7;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="translations;JS:JS Var Name;2021250080;f4;14;16;14;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+</jstree>
+<pythontree>
+</pythontree>
+</codestructure>

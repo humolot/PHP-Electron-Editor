@@ -1,0 +1,94 @@
+{
+  "ui": {
+    "openProject": "Open Project",
+    "newFile": "New File",
+    "saveFile": "Save",
+    "exportProject": "Export Project",
+    "importProject": "Import Project",
+    "about": "About",
+    "analyzeCode": "Analyze Code",
+    "generateCode": "Generate Code",
+    "documentCode": "Document",
+    "explainCode": "Explain",
+    "terminal": "Terminal",
+    "projectTitle": "No project opened",
+    "editorPlaceholder": "Open a project to start editing",
+    "terminalPlaceholder": "Type a command and press Enter",
+    "fileName": "File Name",
+    "createFile": "Create File",
+    "cancel": "Cancel",
+    "renameFile": "Rename File",
+    "newFileName": "New file name",
+    "rename": "Rename"
+  },
+  "modals": {
+    "createFile": "File Name",
+    "renameFile": "Rename File"
+  },
+  "messages": {
+    "fileSaved": "File saved successfully!",
+    "fileCreated": "File created:",
+    "errorCreatingFile": "Error creating file:",
+    "confirmDelete": "Are you sure you want to delete this file?",
+    "projectExported": "Project exported successfully!",
+    "projectImported": "Project imported successfully!",
+    "exportFailed": "Failed to export project",
+    "importFailed": "Failed to import project",
+    "openProjectFirst": "Open a project before exporting"
+  },
+  "alerts": {
+	  "aimanager_loaded": "AIManager Loaded",
+	  "savefile": "File saved successfully!",
+	  "createdfile": "File created:",
+	  "error_createfile": "Error creating the file",
+	  "renomear": "New Name",
+	  "delete": "Delete",
+	  "delete_title": "Are you sure you want to delete this file?",
+	  "open_project_title": "Open a project to start editing",
+	  "about_project_title": "PHP Electron Editor 💡",
+	  "logout": "Do you want to exit the editor? Any unsaved changes will be lost."
+  },
+  "buttons": {
+	  "renomear": "AIManager Carregado"
+  },
+  "ai": {
+	  "analyzecodepanel": "AI will analyze the code for best practices, potential bugs, performance improvements, and security."
+  },
+  "exportProject": {
+	  "no_project_selected": "No project selected to export",
+	  "project_exported_success": "Project exported successfully!",
+	  "project_export_failed": "Failed to export project",
+	  "export_project_title": "Export Project"
+  },
+  "importProject": {
+	  "project_imported_success": "Project imported successfully!",
+	  "project_import_failed": "Failed to import project",
+	  "import_project_title": "Import Project",
+	  "select_directory_for_import": "Select the directory to import the project"
+  },
+  "setupProjectButtons": {
+	  "open_project_before_export": "Open a project before exporting"
+  },
+  "aboutDialog": {
+	  "about_title": "About",
+	  "app_info": "App Information",
+	  "system_info": "System Information",
+	  "tech_versions": "Technology Versions",
+	  "ai_engine_info": "Embedded AI Engine",
+	  "app_name": "Name",
+	  "app_version": "Version",
+	  "app_author": "Author",
+	  "app_company": "Company",
+	  "platform": "Platform",
+	  "architecture": "Architecture",
+	  "build": "Build",
+	  "electron_version": "Electron",
+	  "node_version": "Node.js",
+	  "chrome_version": "Chrome",
+	  "ai_core": "AI Core",
+	  "ai_intelligence": "Intelligence",
+	  "ai_innovation": "Innovation",
+	  "close_button": "Close"
+  }
+
+}

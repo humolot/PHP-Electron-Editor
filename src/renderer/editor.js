@@ -1,11 +1,11 @@
 const closeAppBtn = document.getElementById('closeApp');
   if (closeAppBtn) {
-	  closeAppBtn.addEventListener('click', async () => {
-		  const confirmClose = confirm('Deseja sair do editor? Alterações não salvas serão perdidas.');
-		  if (confirmClose) {
-			  await window.electronAPI.closeApp();
-		  }
-	  });
+	closeAppBtn.addEventListener('click', async () => {
+	const confirmClose = confirm(window.__('alerts.logout') || 'Deseja sair do editor? Alterações não salvas serão perdidas.');
+		if (confirmClose) {
+			await window.electronAPI.closeApp();
+		}
+	});
   }
   require(['vs/editor/editor.main'], function() {
 	  window.monaco.languages.register({ id: 'php' });
@@ -13,7 +13,6 @@ const closeAppBtn = document.getElementById('closeApp');
 	  notyf.success('PHP Electron Editor 💡');
   });
 
-    
   document.getElementById('terminal').addEventListener('click', () => {
 	  terminalInput.focus();
   });

@@ -12,26 +12,36 @@
 <body>
   <div class="app-container">
     <div class="toolbar">
-      <button id="openProject">Abrir Projeto</button>
-      <button id="newFile" disabled>Novo Arquivo</button>
-      <button id="saveFile" disabled>Salvar</button>
-	  <div class="toolbar-section project-tools">
-	  	<button id="exportProjectBtn" class="toolbar-button">Exportar Projeto</button>
-	  	<button id="importProjectBtn" class="toolbar-button">Importar Projeto</button>
-	  </div>
-	  <button id="aboutButton" class="toolbar-button">Sobre</button>
-	  <button id="closeApp" >✕</button>
+      <button id="openProject" data-i18n="ui.openProject">Abrir Projeto</button>
+      <button id="newFile" disabled data-i18n="ui.newFile">Novo Arquivo</button>
+      <button id="saveFile" disabled data-i18n="ui.saveFile">Salvar</button>
+      <div class="toolbar-section project-tools">
+        <button id="exportProjectBtn" class="toolbar-button" data-i18n="ui.exportProject">Exportar Projeto</button>
+        <button id="importProjectBtn" class="toolbar-button" data-i18n="ui.importProject">Importar Projeto</button>
+      </div>
+      
+      <!-- Seletor de idiomas -->
+      <div class="language-selector-container">
+        <select id="languageSelector" title="Mudar idioma">
+          <option value="pt-BR">Português</option>
+          <option value="en-US">English</option>
+          <option value="es-ES">Español</option>
+        </select>
+      </div>
+      
+      <button id="aboutButton" class="toolbar-button" data-i18n="ui.about">Sobre</button>
+      <button id="closeApp">✕</button>
       <div class="ai-tools">
-        <button id="analyzeCodeBtn" disabled>Analisar Código</button>
-        <button id="generateCodeBtn">Gerar Código</button>
-        <button id="documentCodeBtn" disabled>Documentar</button>
-        <button id="explainCodeBtn" disabled>Explicar</button>
+        <button id="analyzeCodeBtn" disabled data-i18n="ui.analyzeCode">Analisar Código</button>
+        <button id="generateCodeBtn" data-i18n="ui.generateCode">Gerar Código</button>
+        <button id="documentCodeBtn" disabled data-i18n="ui.documentCode">Documentar</button>
+        <button id="explainCodeBtn" disabled data-i18n="ui.explainCode">Explicar</button>
       </div>
     </div>
     
     <div class="main-container">
       <div class="sidebar">
-        <div class="project-title">Nenhum projeto aberto</div>
+        <div class="project-title" data-i18n="ui.projectTitle">Nenhum projeto aberto</div>
         <div id="fileExplorer" class="file-explorer"></div>
       </div>
       
@@ -39,50 +49,51 @@
         <div class="tabs-container" id="tabsContainer">
         </div>
         <div class="code-editor-container" id="codeEditorContainer">
-          <div class="editor-placeholder">Abra um projeto para começar a editar</div>
+          <div class="editor-placeholder" data-i18n="ui.editorPlaceholder">Abra um projeto para começar a editar</div>
         </div>
       </div>
     </div>
     
     <div class="terminal-container">
       <div class="terminal-header">
-        <span>Terminal</span>
+        <span data-i18n="ui.terminal">Terminal</span>
       </div>
-	  <pre id="terminal" class="terminal"></pre>
-	  <div class="terminal-input-container">
-	  	<input type="text" id="terminalInput" placeholder="Digite um comando e pressione Enter">
-	  </div>
+      <pre id="terminal" class="terminal"></pre>
+      <div class="terminal-input-container">
+        <input type="text" id="terminalInput" data-i18n-placeholder="ui.terminalPlaceholder" placeholder="Digite um comando e pressione Enter">
+      </div>
     </div>
   </div>
   
   <div id="fileNameModal" class="modal">
-  	<div class="modal-content">
-  		<h3>Nome do Arquivo</h3>
-  		<input type="text" id="fileNameInput" placeholder="Digite o nome do arquivo" />
-  		<button id="submitFileName">Criar Arquivo</button>
-  		<button id="cancelFileName">Cancelar</button>
-  	</div>
+    <div class="modal-content">
+      <h3 data-i18n="modals.createFile">Nome do Arquivo</h3>
+      <input type="text" id="fileNameInput" data-i18n-placeholder="ui.fileName" placeholder="Digite o nome do arquivo" />
+      <button id="submitFileName" data-i18n="ui.createFile">Criar Arquivo</button>
+      <button id="cancelFileName" data-i18n="ui.cancel">Cancelar</button>
+    </div>
   </div>
   
   <div id="renameFileModal" class="modal">
-  	<div class="modal-content">
-  		<h3>Renomear Arquivo</h3>
-  		<input type="text" id="newFileNameInput" placeholder="Novo nome do arquivo">
-  		<button id="renameFileConfirm">Renomear</button>
-  		<button id="renameFileCancel">Cancelar</button>
-  	</div>
+    <div class="modal-content">
+      <h3 data-i18n="modals.renameFile">Renomear Arquivo</h3>
+      <input type="text" id="newFileNameInput" data-i18n-placeholder="ui.newFileName" placeholder="Novo nome do arquivo">
+      <button id="renameFileConfirm" data-i18n="ui.rename">Renomear</button>
+      <button id="renameFileCancel" data-i18n="ui.cancel">Cancelar</button>
+    </div>
   </div>
  
-  <script src="../../node_modules/monaco-editor/min/vs/loader.js"> </script>
-  <script src="../../node_modules/notyf/notyf.min.js"> </script>
+  <script src="../../node_modules/monaco-editor/min/vs/loader.js"></script>
+  <script src="../../node_modules/notyf/notyf.min.js"></script>
   <script>
   require.config({
-	  paths: {
-		  'vs': '../../node_modules/monaco-editor/min/vs'
-	  }
+    paths: {
+      'vs': '../../node_modules/monaco-editor/min/vs'
+    }
   });
   const notyf = new Notyf();
   </script>
+  <script src="i18n-manager.js"></script>
   <script src="editor.js"></script>
   <script src="terminal.js"></script>
   <script src="ai-manager.js"></script>

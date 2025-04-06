@@ -824,6 +824,57 @@ body {
 	margin-left: 10px;
 }
 
+/* Adicione estes estilos ao seu arquivo CSS existente */
+
+.language-selector-container {
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+#languageSelector {
+	background-color: #2a2d2e;
+	color: #e0e0e0;
+	border: 1px solid #3e3e3e;
+	border-radius: 4px;
+	padding: 5px 8px;
+	font-size: 0.85rem;
+	cursor: pointer;
+	outline: none;
+	transition: all 0.2s ease;
+}
+
+#languageSelector:hover {
+	background-color: #3a3d3e;
+	border-color: #5e5e5e;
+}
+
+#languageSelector option {
+	background-color: #2a2d2e;
+	color: #e0e0e0;
+}
+
+/* Ícone de globo (opcional) */
+.language-selector-container::before {
+	content: '🌐';
+	margin-right: 6px;
+	font-size: 16px;
+}
+
+/* Responsividade - em telas menores */
+@media (max-width: 768px) {
+	.language-selector-container {
+		margin-left: 0;
+		margin-top: 5px;
+	}
+
+	#languageSelector {
+		width: 100%;
+		max-width: 150px;
+	}
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }

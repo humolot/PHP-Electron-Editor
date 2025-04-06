@@ -25,8 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
   setupAboutButton();
   setupNewFileModal();
   setupProjectButtons();
+  initAIManager();
   // Iniciar terminal automaticamente com diretório atual
   window.electronAPI.startTerminal();
+  
+  if (window.i18nManager) {
+	  
+  } else {
+	  console.warn('Error i18nManager');
+  }
   
   // Mostrar a saída no console ou em algum <div>
   window.electronAPI.onTerminalOutput((event, data) => {
@@ -40,29 +47,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-window.addEventListener('monaco-ready', () => {
-	notyf.success('Editor Pronto');
-	initAIManager();
-});
-
 // Configurar event listeners
 function setupEventListeners() {
   openProjectBtn.addEventListener('click', handleOpenProject);
   saveFileBtn.addEventListener('click', handleSaveFile);
 }
 
-function initAIManager() {
-  if (typeof window.AIManager === 'function') {
-    aiManager = new window.AIManager();
-    notyf.success('AIManager Carregado');
-    
-    // Se houver um arquivo aberto, atualize o estado dos botões
-    if (activeFile) {
-      aiManager.updateButtonState(true, activeFile.path);
-    }
+// Adicionar esta função para centralizar a lógica de atualização
+function updateAIManagerState() {
+  if (!window.aiManager) {
+    console.log('AIManager não está disponível ainda');
+    return;
+  }
+  
+  if (activeFile) {
+    console.log('Atualizando estado dos botões com arquivo ativo:', activeFile.name);
+    window.aiManager.updateButtonState(true, activeFile.path);
   } else {
-    console.warn('AIManager não está disponível, tentando novamente em 1 segundo...');
-    setTimeout(initAIManager, 1000); // Tentar novamente após 1 segundo
+    console.log('Nenhum arquivo ativo, botões desabilitados');
+    window.aiManager.updateButtonState(false);
+  }
+}
+
+// Modificar a função initAIManager para usar a nova função
+function initAIManager() {
+  console.log('Tentando inicializar AIManager...');
+  
+  if (typeof window.AIManager !== 'function') {
+    console.warn('AIManager classe não está disponível, tentando novamente em 1 segundo...');
+    setTimeout(initAIManager, 1000);
+    return;
+  }
+  
+  if (!window.aiManager) {
+    console.log('Criando nova instância do AIManager');
+    try {
+      window.aiManager = new window.AIManager();
+      notyf.success('AIManager Carregado');
+      // Chamar a função de atualização após inicialização
+      updateAIManagerState();
+    } catch (error) {
+      console.error('Erro ao instanciar AIManager:', error);
+      notyf.error('Erro ao carregar AIManager');
+      return;
+    }
   }
 }
 
@@ -408,9 +436,7 @@ function setActiveFile(index) {
     }
     
     // Atualizar estado dos botões de IA
-    if (aiManager) {
-      aiManager.updateButtonState(true, activeFile.path);
-    }
+    updateAIManagerState();
   }
 }
 
@@ -757,66 +783,58 @@ function printToTerminal(message) {
   terminal.appendChild(line);
   terminal.scrollTop = terminal.scrollHeight;
 }
-
 async function exportProject() {
   if (!currentProject) {
-    alert('Nenhum projeto selecionado para exportar');
+    alert(window.__('exportProject.no_project_selected') || 'Nenhum projeto selecionado para exportar');
     return;
   }
 
   try {
-    // Abrir diálogo para escolher local de salvamento
     const exportPath = await window.electronAPI.showSaveDialog({
-      title: 'Exportar Projeto',
+      title: window.__('exportProject.export_project_title') || 'Exportar Projeto',
       defaultPath: `${getProjectName(currentProject)}.peditor`,
       filters: [{ name: 'Projeto Editor', extensions: ['peditor'] }]
     });
 
     if (exportPath) {
-      // Criar um arquivo ZIP com o conteúdo do projeto
       await window.electronAPI.exportProjectToZip(currentProject, exportPath);
-      alert('Projeto exportado com sucesso!');
+      alert(window.__('exportProject.project_exported_success') || 'Projeto exportado com sucesso!');
     }
   } catch (error) {
     console.error('Erro ao exportar projeto:', error);
-    alert('Falha ao exportar o projeto');
+    alert(window.__('exportProject.project_export_failed') || 'Falha ao exportar o projeto');
   }
 }
 
 async function importProject() {
   try {
-    // Abrir diálogo para selecionar arquivo .peditor
     const importPath = await window.electronAPI.showOpenDialog({
-      title: 'Importar Projeto',
+      title: window.__('importProject.import_project_title') || 'Importar Projeto',
       filters: [{ name: 'Projeto Editor', extensions: ['peditor'] }]
     });
 
     if (importPath) {
-      // Escolher diretório de destino para extrair
       const destinationPath = await window.electronAPI.showOpenDialog({
-        title: 'Selecione o diretório para importar o projeto',
+        title: window.__('importProject.select_directory_for_import') || 'Selecione o diretório para importar o projeto',
         properties: ['openDirectory']
       });
 
       if (destinationPath) {
-        // Extrair o projeto
         await window.electronAPI.importProjectFromZip(importPath, destinationPath);
         
-        // Abrir o projeto importado
         currentProject = destinationPath;
         projectTitleEl.textContent = getProjectName(destinationPath);
         newFileBtn.disabled = false;
         
-        // Carregar a estrutura de arquivos do projeto
         const files = await window.electronAPI.readDirectory(destinationPath);
         renderFileExplorer(files);
         
-        alert('Projeto importado com sucesso!');
+        alert(window.__('importProject.project_imported_success') || 'Projeto importado com sucesso!');
       }
     }
   } catch (error) {
     console.error('Erro ao importar projeto:', error);
-    alert('Falha ao importar o projeto');
+    alert(window.__('importProject.project_import_failed') || 'Falha ao importar o projeto');
   }
 }
 
@@ -824,13 +842,11 @@ function setupProjectButtons() {
   const exportProjectBtn = document.getElementById('exportProjectBtn');
   const importProjectBtn = document.getElementById('importProjectBtn');
 
-  // Desabilitar botões se nenhum projeto estiver aberto
-
   exportProjectBtn.addEventListener('click', () => {
     if (currentProject) {
       exportProject();
     } else {
-      alert('Abra um projeto antes de exportar');
+      alert(window.__('setupProjectButtons.open_project_before_export') || 'Abra um projeto antes de exportar');
     }
   });
 
@@ -841,59 +857,51 @@ function setupProjectButtons() {
 
 async function showAboutDialog() {
   try {
-    // Obter informações do aplicativo
     const appInfo = await window.electronAPI.getAppInfo();
     
-    // Criar o modal de About
     const aboutModal = document.createElement('div');
     aboutModal.className = 'modal';
     aboutModal.innerHTML = `
       <div class="modal-content-about about-dialog">
         <button class="close-modal" aria-label="Fechar">&times;</button>
-        <h2>Sobre ${appInfo.name}</h2>
+        <h2>${window.__('aboutDialog.about_title') || 'Sobre'} ${appInfo.name}</h2>
         <div class="about-info">
           <div class="about-section">
-            <h3>Informações do Aplicativo</h3>
-            <p><strong>Nome:</strong> ${appInfo.name}</p>
-            <p><strong>Versão:</strong> ${appInfo.version}</p>
-            <p><strong>Autor:</strong> ${appInfo.author}</p>
-            <p><strong>Empresa:</strong> ${appInfo.company}</p>
+            <h3>${window.__('aboutDialog.app_info') || 'Informações do Aplicativo'}</h3>
+            <p><strong>${window.__('aboutDialog.app_name') || 'Nome'}:</strong> ${appInfo.name}</p>
+            <p><strong>${window.__('aboutDialog.app_version') || 'Versão'}:</strong> ${appInfo.version}</p>
+            <p><strong>${window.__('aboutDialog.app_author') || 'Autor'}:</strong> ${appInfo.author}</p>
+            <p><strong>${window.__('aboutDialog.app_company') || 'Empresa'}:</strong> ${appInfo.company}</p>
           </div>
-          
           <div class="about-section">
-            <h3>Informações do Sistema</h3>
-            <p><strong>Plataforma:</strong> ${appInfo.platform}</p>
-            <p><strong>Arquitetura:</strong> ${appInfo.arch}</p>
-            <p><strong>Build:</strong> ${new Date(appInfo.buildDate).toLocaleString()}</p>
+            <h3>${window.__('aboutDialog.system_info') || 'Informações do Sistema'}</h3>
+            <p><strong>${window.__('aboutDialog.platform') || 'Plataforma'}:</strong> ${appInfo.platform}</p>
+            <p><strong>${window.__('aboutDialog.architecture') || 'Arquitetura'}:</strong> ${appInfo.arch}</p>
+            <p><strong>${window.__('aboutDialog.build') || 'Build'}:</strong> ${new Date(appInfo.buildDate).toLocaleString()}</p>
           </div>
-          
           <div class="about-section">
-            <h3>Versões de Tecnologia</h3>
-            <p><strong>Electron:</strong> ${appInfo.electronVersion}</p>
-            <p><strong>Node.js:</strong> ${appInfo.nodeVersion}</p>
-            <p><strong>Chrome:</strong> ${appInfo.chromeVersion}</p>
+            <h3>${window.__('aboutDialog.tech_versions') || 'Versões de Tecnologia'}</h3>
+            <p><strong>${window.__('aboutDialog.electron_version') || 'Electron'}:</strong> ${appInfo.electronVersion}</p>
+            <p><strong>${window.__('aboutDialog.node_version') || 'Node.js'}:</strong> ${appInfo.nodeVersion}</p>
+            <p><strong>${window.__('aboutDialog.chrome_version') || 'Chrome'}:</strong> ${appInfo.chromeVersion}</p>
           </div>
-          
           <div class="about-section">
-			  <h3>Motor de IA Embarcado</h3>
-			  <p><strong>Núcleo IA:</strong> GPT-4o OpenAI</p>
-			  <p><strong>Inteligência:</strong> Geração e Análise Contextual</p>
-			  <p><strong>Inovação:</strong> Assistência em Codificação</p>
-			</div>
+            <h3>${window.__('aboutDialog.ai_engine_info') || 'Motor de IA Embarcado'}</h3>
+            <p><strong>${window.__('aboutDialog.ai_core') || 'Núcleo IA'}:</strong> GPT-4o OpenAI</p>
+            <p><strong>${window.__('aboutDialog.ai_intelligence') || 'Inteligência'}:</strong> Geração e Análise Contextual</p>
+            <p><strong>${window.__('aboutDialog.ai_innovation') || 'Inovação'}:</strong> Assistência em Codificação</p>
+          </div>
         </div>
         <div class="modal-buttons">
-          <button id="closeAboutModal">Fechar</button>
+          <button id="closeAboutModal">${window.__('aboutDialog.close_button') || 'Fechar'}</button>
         </div>
       </div>
     `;
     
-    // Adicionar ao corpo do documento
     document.body.appendChild(aboutModal);
     
-    // Mostrar o modal
     aboutModal.style.display = 'flex';
     
-    // Adicionar event listeners
     const closeBtn = aboutModal.querySelector('.close-modal');
     const closeModalBtn = aboutModal.querySelector('#closeAboutModal');
     
@@ -904,7 +912,6 @@ async function showAboutDialog() {
     closeBtn.addEventListener('click', handleClose);
     closeModalBtn.addEventListener('click', handleClose);
     
-    // Fechar quando clicar fora do modal
     aboutModal.addEventListener('click', (e) => {
       if (e.target === aboutModal) {
         handleClose();
@@ -912,7 +919,7 @@ async function showAboutDialog() {
     });
   } catch (error) {
     console.error('Erro ao mostrar diálogo Sobre:', error);
-    alert('Não foi possível carregar as informações do aplicativo.');
+    alert(window.__('aboutDialog.project_import_failed') || 'Não foi possível carregar as informações do aplicativo.');
   }
 }
 

@@ -1,0 +1,95 @@
+{
+  "ui": {
+    "openProject": "Abrir Proyecto",
+    "newFile": "Nuevo Archivo",
+    "saveFile": "Guardar",
+    "exportProject": "Exportar Proyecto",
+    "importProject": "Importar Proyecto",
+    "about": "Acerca de",
+    "analyzeCode": "Analizar Código",
+    "generateCode": "Generar Código",
+    "documentCode": "Documentar",
+    "explainCode": "Explicar",
+    "terminal": "Terminal",
+    "projectTitle": "Ningún proyecto abierto",
+    "editorPlaceholder": "Abra un proyecto para comenzar a editar",
+    "terminalPlaceholder": "Escriba un comando y presione Enter",
+    "fileName": "Nombre del Archivo",
+    "createFile": "Crear Archivo",
+    "cancel": "Cancelar",
+    "renameFile": "Renombrar Archivo",
+    "newFileName": "Nuevo nombre de archivo",
+    "rename": "Renombrar"
+  },
+  "modals": {
+    "createFile": "Nombre del Archivo",
+    "renameFile": "Renombrar Archivo"
+  },
+  "messages": {
+    "fileSaved": "¡Archivo guardado con éxito!",
+    "fileCreated": "Archivo creado:",
+    "errorCreatingFile": "Error al crear el archivo:",
+    "confirmDelete": "¿Está seguro de que desea eliminar este archivo?",
+    "projectExported": "¡Proyecto exportado con éxito!",
+    "projectImported": "¡Proyecto importado con éxito!",
+    "exportFailed": "Error al exportar el proyecto",
+    "importFailed": "Error al importar el proyecto",
+    "openProjectFirst": "Abra un proyecto antes de exportar"
+  },
+  "alerts": {
+	  "aimanager_loaded": "AIManager Cargado",
+	  "savefile": "¡Archivo guardado con éxito!",
+	  "createdfile": "Archivo creado:",
+	  "error_createfile": "Error al crear el archivo",
+	  "renomear": "Nuevo Nombre",
+	  "delete": "Eliminar",
+	  "delete_title": "¿Estás seguro que deseas eliminar este archivo?",
+	  "open_project_title": "Abra un proyecto para comenzar a editar",
+	  "about_project_title": "Editor PHP Electron 💡",
+	  "logout": "¿Quieres salir del editor? Los cambios no guardados se perderán."
+  },
+  "buttons": {
+	  "renomear": "AIManager Cargado"
+  },
+  "ai": {
+	  "analyzecodepanel": "La IA analizará el código para encontrar las mejores prácticas, posibles errores, mejoras de rendimiento y seguridad."
+  },
+  "exportProject": {
+	  "no_project_selected": "Ningún proyecto seleccionado para exportar",
+	  "project_exported_success": "¡Proyecto exportado con éxito!",
+	  "project_export_failed": "Error al exportar el proyecto",
+	  "export_project_title": "Exportar Proyecto"
+  },
+  "importProject": {
+	  "project_imported_success": "¡Proyecto importado con éxito!",
+	  "project_import_failed": "Error al importar el proyecto",
+	  "import_project_title": "Importar Proyecto",
+	  "select_directory_for_import": "Selecciona el directorio para importar el proyecto"
+  },
+  "setupProjectButtons": {
+	  "open_project_before_export": "Abre un proyecto antes de exportar"
+  },
+  "aboutDialog": {
+	  "about_title": "Acerca de",
+	  "app_info": "Información de la Aplicación",
+	  "system_info": "Información del Sistema",
+	  "tech_versions": "Versiones de Tecnología",
+	  "ai_engine_info": "Motor de IA Integrado",
+	  "app_name": "Nombre",
+	  "app_version": "Versión",
+	  "app_author": "Autor",
+	  "app_company": "Empresa",
+	  "platform": "Plataforma",
+	  "architecture": "Arquitectura",
+	  "build": "Build",
+	  "electron_version": "Electron",
+	  "node_version": "Node.js",
+	  "chrome_version": "Chrome",
+	  "ai_core": "Núcleo de IA",
+	  "ai_intelligence": "Inteligencia",
+	  "ai_innovation": "Innovación",
+	  "close_button": "Cerrar"
+  }
+
+
+}
