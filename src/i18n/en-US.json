@@ -1,94 +1,214 @@
 {
-  "ui": {
-    "openProject": "Open Project",
-    "newFile": "New File",
-    "saveFile": "Save",
-    "exportProject": "Export Project",
-    "importProject": "Import Project",
-    "about": "About",
-    "analyzeCode": "Analyze Code",
-    "generateCode": "Generate Code",
-    "documentCode": "Document",
-    "explainCode": "Explain",
-    "terminal": "Terminal",
-    "projectTitle": "No project opened",
-    "editorPlaceholder": "Open a project to start editing",
-    "terminalPlaceholder": "Type a command and press Enter",
-    "fileName": "File Name",
-    "createFile": "Create File",
-    "cancel": "Cancel",
-    "renameFile": "Rename File",
-    "newFileName": "New file name",
-    "rename": "Rename"
-  },
-  "modals": {
-    "createFile": "File Name",
-    "renameFile": "Rename File"
-  },
-  "messages": {
-    "fileSaved": "File saved successfully!",
-    "fileCreated": "File created:",
-    "errorCreatingFile": "Error creating file:",
-    "confirmDelete": "Are you sure you want to delete this file?",
-    "projectExported": "Project exported successfully!",
-    "projectImported": "Project imported successfully!",
-    "exportFailed": "Failed to export project",
-    "importFailed": "Failed to import project",
-    "openProjectFirst": "Open a project before exporting"
-  },
-  "alerts": {
-	  "aimanager_loaded": "AIManager Loaded",
-	  "savefile": "File saved successfully!",
-	  "createdfile": "File created:",
-	  "error_createfile": "Error creating the file",
-	  "renomear": "New Name",
-	  "delete": "Delete",
-	  "delete_title": "Are you sure you want to delete this file?",
-	  "open_project_title": "Open a project to start editing",
-	  "about_project_title": "PHP Electron Editor 💡",
-	  "logout": "Do you want to exit the editor? Any unsaved changes will be lost."
-  },
-  "buttons": {
-	  "renomear": "AIManager Carregado"
-  },
-  "ai": {
-	  "analyzecodepanel": "AI will analyze the code for best practices, potential bugs, performance improvements, and security."
-  },
-  "exportProject": {
-	  "no_project_selected": "No project selected to export",
-	  "project_exported_success": "Project exported successfully!",
-	  "project_export_failed": "Failed to export project",
-	  "export_project_title": "Export Project"
-  },
-  "importProject": {
-	  "project_imported_success": "Project imported successfully!",
-	  "project_import_failed": "Failed to import project",
-	  "import_project_title": "Import Project",
-	  "select_directory_for_import": "Select the directory to import the project"
-  },
-  "setupProjectButtons": {
-	  "open_project_before_export": "Open a project before exporting"
-  },
-  "aboutDialog": {
-	  "about_title": "About",
-	  "app_info": "App Information",
-	  "system_info": "System Information",
-	  "tech_versions": "Technology Versions",
-	  "ai_engine_info": "Embedded AI Engine",
-	  "app_name": "Name",
-	  "app_version": "Version",
-	  "app_author": "Author",
-	  "app_company": "Company",
-	  "platform": "Platform",
-	  "architecture": "Architecture",
-	  "build": "Build",
-	  "electron_version": "Electron",
-	  "node_version": "Node.js",
-	  "chrome_version": "Chrome",
-	  "ai_core": "AI Core",
-	  "ai_intelligence": "Intelligence",
-	  "ai_innovation": "Innovation",
-	  "close_button": "Close"
-  }
-
+	"ui": {
+		"openProject": "Open Project",
+		"newFile": "New File",
+		"saveFile": "Save",
+		"exportProject": "Export Project",
+		"importProject": "Import Project",
+		"about": "About",
+		"analyzeCode": "Analyze Code",
+		"generateCode": "Generate Code",
+		"documentCode": "Document",
+		"explainCode": "Explain",
+		"terminal": "Terminal",
+		"projectTitle": "No project open",
+		"editorPlaceholder": "Open a project to start editing",
+		"terminalPlaceholder": "Type a command and press Enter",
+		"fileName": "File Name",
+		"createFile": "Create File",
+		"cancel": "Cancel",
+		"renameFile": "Rename File",
+		"newFileName": "New file name",
+		"rename": "Rename"
+	},
+	"modals": {
+		"createFile": "File Name",
+		"renameFile": "Rename File"
+	},
+	"messages": {
+		"fileSaved": "File saved successfully!",
+		"fileCreated": "File created:",
+		"errorCreatingFile": "Error creating the file:",
+		"confirmDelete": "Are you sure you want to delete this file?",
+		"projectExported": "Project exported successfully!",
+		"projectImported": "Project imported successfully!",
+		"exportFailed": "Failed to export the project",
+		"importFailed": "Failed to import the project",
+		"openProjectFirst": "Open a project before exporting"
+	},
+	"alerts": {
+		"aimanager_loaded": "AIManager Loaded",
+		"savefile": "File saved successfully!",
+		"createdfile": "File created:",
+		"error_createfile": "Error creating the file",
+		"renomear": "Add Name",
+		"delete": "Delete",
+		"delete_title": "Are you sure you want to delete this file?",
+		"open_project_title": "Open a project to start editing",
+		"about_project_title": "PHP Electron Editor 💡",
+		"logout": "Do you want to log out of the editor? Unsaved changes will be lost.",
+		"enter_code_generate": "Please provide a description of the code you want to generate.",
+		"copied": "Copied!",
+		"wait_for_explanation": "Please provide the code you want to explain.",
+		"file_created": "File Created:",
+		"file_save_success": "File saved successfully!",
+		"confirm_delete": "Are you sure you want to delete this file?"
+	},
+	"buttons": {
+		"renomear": "AIManager Loaded",
+		"cancel": "Cancel",
+		"analyze": "Analyze",
+		"close": "Close",
+		"generate": "Generate",
+		"copy_code": "Copy Code",
+		"document": "Document",
+		"apply_code": "Apply to File",
+		"explain": "Explain",
+		"new_file": "New File",
+		"rename": "Rename",
+		"delete": "Delete"
+	},
+	"ai": {
+		"analyzecodetitle": "Analyzing the file:",
+		"processing": "Processing...",
+		"modal_codeanalyze": "Code Analysis",
+		"loadinganalyzer": "Analyzing code...",
+		"result_analyze": "Analysis result:",
+		"tokens_used": "Tokens used:",
+		"error_analyze": "Error analyzing the code:",
+		"analyzecodepanel": "The AI will analyze the code for best practices, potential bugs, performance improvements, and security.",
+		"modal_generate": "Generate Code",
+		"generate_description": "Describe the code you want to generate:",
+		"generate_example": "For example: 'Create a PHP function that validates a contact form with fields for name, email, and message.'",
+		"lang": "Language",
+		"loading_generate": "Generating code...",
+		"error_generate_code": "Error generating the code:",
+		"modal_document": "Document Code",
+		"document_title": "Documenting the file:",
+		"document_description": "The AI will add comments, docblocks, and documentation to the existing code.",
+		"documenting": "Documenting code...",
+		"documented_code": "Documented code:",
+		"error_documented": "Error documenting the code:",
+		"modal_explain_code": "Explain Code",
+		"explaining_code": "Explaining the file code:",
+		"explaining_code_example": "Code to be explained (you can edit it):",
+		"explaining_loading": "Analyzing and explaining the code...",
+		"success_explain": "Code explanation:",
+		"error_explain": "Error explaining the code:"
+	},
+	"exportProject": {
+		"no_project_selected": "No project selected for export",
+		"project_exported_success": "Project exported successfully!",
+		"project_export_failed": "Failed to export the project",
+		"export_project_title": "Export Project"
+	},
+	"importProject": {
+		"project_imported_success": "Project imported successfully!",
+		"project_import_failed": "Failed to import the project",
+		"import_project_title": "Import Project",
+		"select_directory_for_import": "Select the directory to import the project"
+	},
+	"setupProjectButtons": {
+		"open_project_before_export": "Open a project before exporting"
+	},
+	"aboutDialog": {
+		"about_title": "About",
+		"app_info": "App Information",
+		"system_info": "System Information",
+		"tech_versions": "Technology Versions",
+		"ai_engine_info": "Embedded AI Engine",
+		"app_name": "Name",
+		"app_version": "Version",
+		"app_author": "Author",
+		"app_company": "Company",
+		"platform": "Platform",
+		"architecture": "Architecture",
+		"build": "Build",
+		"electron_version": "Electron",
+		"node_version": "Node.js",
+		"chrome_version": "Chrome",
+		"ai_core": "AI Core",
+		"ai_intelligence": "Intelligence",
+		"ai_innovation": "Innovation",
+		"close_button": "Close"
+	},
+	"commands": {
+		"terminal": {
+			"cd": "Change the current directory",
+			"mkdir": "Create a new directory",
+			"rmdir": "Remove an empty directory",
+			"rm": "Remove files or directories",
+			"dir": "List files and folders (Windows)",
+			"ls": "List files and folders (Linux/Mac)",
+			"cls": "Clear screen (Windows)",
+			"clear": "Clear screen (Linux/Mac)"
+		},
+		"php": {
+			"php_v": "Display PHP version",
+			"php_m": "List installed PHP modules",
+			"php_server": "Start a built-in PHP server",
+			"php_run": "Run a PHP script"
+		},
+		"composer": {
+			"composer_install": "Install project dependencies",
+			"composer_update": "Update project dependencies",
+			"composer_require": "Add packages as dependencies",
+			"composer_remove": "Remove packages from the project",
+			"composer_autoload": "Update the autoloader",
+			"composer_create": "Create a new project",
+			"composer_validate": "Validate the composer.json",
+			"composer_show": "Show package information"
+		},
+		"laravel": {
+			"artisan_optimize": "Optimize application performance",
+			"artisan_optimize_clear": "Clear optimized caches",
+			"artisan_config_cache": "Create configuration cache",
+			"artisan_route_cache": "Create route cache",
+			"artisan_view_cache": "Compile all Blade views",
+			"artisan_event_cache": "Cache events and listeners",
+			"artisan_make_request": "Create a new Form Request",
+			"artisan_make_middleware": "Create a new Middleware",
+			"artisan_make_job": "Create a new Job",
+			"artisan_make_event": "Create a new Event",
+			"artisan_make_listener": "Create a new Listener",
+			"artisan_make_command": "Create a new Artisan command",
+			"artisan_schedule_run": "Run scheduled tasks",
+			"artisan_queue_work": "Process queue jobs",
+			"artisan_queue_restart": "Restart queue workers",
+			"artisan_down": "Put the application in maintenance mode",
+			"artisan_up": "Bring the application out of maintenance mode"
+		},
+		"codeigniter": {
+			"spark_serve": "Start the development server",
+			"spark_migrate": "Run migrations",
+			"spark_migrate_rollback": "Rollback the last migration",
+			"spark_make_controller": "Create a new controller",
+			"spark_make_model": "Create a new model",
+			"spark_make_migration": "Create a new migration",
+			"spark_make_seeder": "Create a new seeder",
+			"spark_db_seed": "Run seeders",
+			"spark_cache_clear": "Clear application cache",
+			"spark_routes": "List all registered routes"
+		},
+		"git": {
+			"git_init": "Initialize a Git repository",
+			"git_clone": "Clone a Git repository",
+			"git_add": "Add files to staging",
+			"git_commit": "Create a new commit",
+			"git_push": "Push commits to remote repository",
+			"git_pull": "Pull and merge changes from remote repository",
+			"git_status": "Show repository status",
+			"git_branch": "List, create, or delete branches",
+			"git_checkout": "Switch to another branch or commit"
+		},
+		"npm": {
+			"npm_install": "Install dependencies",
+			"npm_update": "Update dependencies",
+			"npm_run": "Run scripts defined in package.json",
+			"npm_run_dev": "Run the development script",
+			"npm_run_build": "Run the build script for production",
+			"yarn_install": "Install dependencies (Yarn)",
+			"yarn_run": "Run scripts with Yarn"
+		}
+	}
 }
