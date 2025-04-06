@@ -80,8 +80,8 @@
 <treenode node="TerminalManager;JS:Class Name;3745451894;f0;1;21;1;;;;vpos;;v;;aObject_;;c;;r;;d22,1;;b0,0;;m0;;e0;;i0;;o;;k;;lterminalElement;;p;;x;;n">
 <treenode node="constructor;JS:Function Name;3745451894;f0;2;3;10;;;;vpos;;v;;aObject_;;c;;r;;d31,2;;b0,0;;m0;;e0;;i0;;o;;k;;lterminalElement;;p;;x;;n">
 </treenode>
-<treenode node="initialize;JS:Function Name;3745451894;f7;12;41;111;;;;vpos;;v;;aObject_;;c;;r;;d38,12;;b0,0;;m0;;e0;;i0;;o;;k;;lworkingDir;;p;;x;;n">
-<treenode node="outputHandler;JS:Function Name;3745451894;f11;34;41;111;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;levent;;pdata;;p;;x;;x;;n">
+<treenode node="initialize;JS:Function Name;3745451894;f7;12;0;0;;;;vpos;;v;;aObject_;;c;;r;;d38,12;;b0,0;;m0;;e0;;i0;;o;;k;;lworkingDir;;p;;x;;n">
+<treenode node="outputHandler;JS:Function Name;3745451894;f11;34;0;0;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;levent;;pdata;;p;;x;;x;;n">
 <treenode node="data;JS:Function Name;3745451894;f34;34;7;51;;;;vpos;;v;;a;;r;;d35,49;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 </treenode>
@@ -99,75 +99,77 @@
 <treenode node="terminalElement;JS:JS Var Name;3745451894;f9;3;24;3;;;;vpos;;v;;a;;r;;d-1,-1;;b0,1;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 </treenode>
-<treenode node="closeAppBtn;JS:Function Name;1429129259;f6;0;4;7;;;;vpos;;v;;a;;r;;d53,2;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="closeAppBtn;JS:Function Name;1429129259;f6;0;2;7;;;;vpos;;v;;a;;r;;d51,2;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="closeTab;JS:Function Name;1422221740;f0;431;1;470;;;;vpos;;v;;aObject_;;c;;r;;d25,431;;b0,0;;m0;;e0;;i0;;o;;k;;lindex;;p;;x;;n">
+<treenode node="closeTab;JS:Function Name;1422221740;f0;443;1;482;;;;vpos;;v;;aObject_;;c;;r;;d25,443;;b0,0;;m0;;e0;;i0;;o;;k;;lindex;;p;;x;;n">
 </treenode>
-<treenode node="createEditor;JS:Function Name;1422221740;f0;473;1;554;;;;vpos;;v;;aObject_;;c;;r;;d41,473;;b0,0;;m0;;e0;;i0;;o;;k;;lfilePath;;pcontent;;p;;x;;x;;n">
+<treenode node="createEditor;JS:Function Name;1422221740;f0;485;1;566;;;;vpos;;v;;aObject_;;c;;r;;d41,485;;b0,0;;m0;;e0;;i0;;o;;k;;lfilePath;;pcontent;;p;;x;;x;;n">
 </treenode>
-<treenode node="createFile;JS:Function Name;1422221740;f5;161;1;169;;;;vpos;;v;;aObject_;;c;;r;;d45,161;;b0,0;;m0;;e0;;i0;;o;;k;;ldirPath;;pfileName;;p;;x;;x;;n">
+<treenode node="createFile;JS:Function Name;1422221740;f5;176;1;183;;;;vpos;;v;;aObject_;;c;;r;;d45,176;;b0,0;;m0;;e0;;i0;;o;;k;;ldirPath;;pfileName;;p;;x;;x;;n">
 </treenode>
-<treenode node="createFileExplorerItem;JS:Function Name;1422221740;f0;172;1;302;;;;vpos;;v;;aObject_;;c;;r;;d38,172;;b0,0;;m0;;e0;;i0;;o;;k;;litem;;p;;x;;n">
+<treenode node="createFileExplorerItem;JS:Function Name;1422221740;f0;186;1;316;;;;vpos;;v;;aObject_;;c;;r;;d38,186;;b0,0;;m0;;e0;;i0;;o;;k;;litem;;p;;x;;n">
 </treenode>
-<treenode node="createNewFile;JS:Function Name;1422221740;f5;563;1;590;;;;vpos;;v;;aObject_;;c;;r;;d48,563;;b0,0;;m0;;e0;;i0;;o;;k;;ldirPath;;pfileName;;p;;x;;x;;n">
+<treenode node="createNewFile;JS:Function Name;1422221740;f5;575;1;602;;;;vpos;;v;;aObject_;;c;;r;;d48,575;;b0,0;;m0;;e0;;i0;;o;;k;;ldirPath;;pfileName;;p;;x;;x;;n">
 </treenode>
-<treenode node="createTab;JS:Function Name;1422221740;f0;375;1;398;;;;vpos;;v;;aObject_;;c;;r;;d32,375;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;pindex;;p;;x;;x;;n">
+<treenode node="createTab;JS:Function Name;1422221740;f0;389;1;412;;;;vpos;;v;;aObject_;;c;;r;;d32,389;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;pindex;;p;;x;;x;;n">
 </treenode>
-<treenode node="createWindow;JS:Function Name;2021250080;f0;36;1;57;;;;vpos;;v;;aObject_;;c;;r;;d24,36;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="createWindow;JS:Function Name;2021250080;f0;37;1;58;;;;vpos;;v;;aObject_;;c;;r;;d24,37;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="deleteFile;JS:Function Name;1422221740;f5;634;1;663;;;;vpos;;v;;aObject_;;c;;r;;d32,634;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;p;;x;;n">
+<treenode node="deleteFile;JS:Function Name;1422221740;f5;646;1;675;;;;vpos;;v;;aObject_;;c;;r;;d32,646;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;p;;x;;n">
 </treenode>
-<treenode node="exportProject;JS:Function Name;1422221740;f5;774;1;795;;;;vpos;;v;;aObject_;;c;;r;;d31,774;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="exportProject;JS:Function Name;1422221740;f5;785;1;806;;;;vpos;;v;;aObject_;;c;;r;;d31,785;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="getActiveEditorContent;JS:Function Name;1422221740;f0;557;1;560;;;;vpos;;v;;aObject_;;c;;r;;d34,557;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="getActiveEditorContent;JS:Function Name;1422221740;f0;569;1;572;;;;vpos;;v;;aObject_;;c;;r;;d34,569;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="getProjectName;JS:Function Name;1422221740;f0;136;1;139;;;;vpos;;v;;aObject_;;c;;r;;d30,136;;b0,0;;m0;;e0;;i0;;o;;k;;lpath;;p;;x;;n">
+<treenode node="getProjectName;JS:Function Name;1422221740;f0;151;1;154;;;;vpos;;v;;aObject_;;c;;r;;d30,151;;b0,0;;m0;;e0;;i0;;o;;k;;lpath;;p;;x;;n">
 </treenode>
-<treenode node="handleOpenProject;JS:Function Name;1422221740;f5;82;1;101;;;;vpos;;v;;aObject_;;c;;r;;d35,82;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="handleOpenProject;JS:Function Name;1422221740;f5;97;1;116;;;;vpos;;v;;aObject_;;c;;r;;d35,97;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="handleSaveFile;JS:Function Name;1422221740;f5;103;1;112;;;;vpos;;v;;aObject_;;c;;r;;d32,103;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="handleSaveFile;JS:Function Name;1422221740;f5;118;1;127;;;;vpos;;v;;aObject_;;c;;r;;d32,118;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="importProject;JS:Function Name;1422221740;f5;797;1;827;;;;vpos;;v;;aObject_;;c;;r;;d31,797;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="importProject;JS:Function Name;1422221740;f5;808;1;838;;;;vpos;;v;;aObject_;;c;;r;;d31,808;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="initAIManager;JS:Function Name;1422221740;f0;66;1;79;;;;vpos;;v;;aObject_;;c;;r;;d25,66;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="initAIManager;JS:Function Name;1422221740;f0;72;1;94;;;;vpos;;v;;aObject_;;c;;r;;d25,72;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="loadSessionState;JS:Function Name;1422221740;f5;691;1;726;;;;vpos;;v;;aObject_;;c;;r;;d34,691;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="loadSessionState;JS:Function Name;1422221740;f5;703;1;738;;;;vpos;;v;;aObject_;;c;;r;;d34,703;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="loadTranslations;JS:Function Name;2021250080;f0;16;1;29;;;;vpos;;v;;aObject_;;c;;r;;d36,16;;b0,0;;m0;;e0;;i0;;o;;k;;llangCode;;p;;x;;n">
+<treenode node="loadTranslations;JS:Function Name;2021250080;f0;17;1;30;;;;vpos;;v;;aObject_;;c;;r;;d36,17;;b0,0;;m0;;e0;;i0;;o;;k;;llangCode;;p;;x;;n">
 </treenode>
-<treenode node="openFile;JS:Function Name;1422221740;f5;341;1;372;;;;vpos;;v;;aObject_;;c;;r;;d50,341;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;psetAsActive;;ptrue;;p;;x;;x;;x;;n">
+<treenode node="openFile;JS:Function Name;1422221740;f5;355;1;386;;;;vpos;;v;;aObject_;;c;;r;;d50,355;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;psetAsActive;;ptrue;;p;;x;;x;;x;;n">
 </treenode>
-<treenode node="printToTerminal;JS:Function Name;1422221740;f0;767;1;772;;;;vpos;;v;;aObject_;;c;;r;;d34,767;;b0,0;;m0;;e0;;i0;;o;;k;;lmessage;;p;;x;;n">
+<treenode node="printToTerminal;JS:Function Name;1422221740;f0;779;1;784;;;;vpos;;v;;aObject_;;c;;r;;d34,779;;b0,0;;m0;;e0;;i0;;o;;k;;lmessage;;p;;x;;n">
 </treenode>
-<treenode node="readDirectoryStructure;JS:Function Name;2021250080;f5;228;1;249;;;;vpos;;v;;aObject_;;c;;r;;d43,228;;b0,0;;m0;;e0;;i0;;o;;k;;ldir;;p;;x;;n">
+<treenode node="readDirectoryStructure;JS:Function Name;2021250080;f5;229;1;250;;;;vpos;;v;;aObject_;;c;;r;;d43,229;;b0,0;;m0;;e0;;i0;;o;;k;;ldir;;p;;x;;n">
 </treenode>
-<treenode node="renameFile;JS:Function Name;1422221740;f5;593;1;632;;;;vpos;;v;;aObject_;;c;;r;;d41,593;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;pnewName;;p;;x;;x;;n">
+<treenode node="renameFile;JS:Function Name;1422221740;f5;605;1;644;;;;vpos;;v;;aObject_;;c;;r;;d41,605;;b0,0;;m0;;e0;;i0;;o;;k;;lfile;;pnewName;;p;;x;;x;;n">
 </treenode>
-<treenode node="renderFileExplorer;JS:Function Name;1422221740;f0;142;1;148;;;;vpos;;v;;aObject_;;c;;r;;d35,142;;b0,0;;m0;;e0;;i0;;o;;k;;lfiles;;p;;x;;n">
+<treenode node="renderFileExplorer;JS:Function Name;1422221740;f0;157;1;163;;;;vpos;;v;;aObject_;;c;;r;;d35,157;;b0,0;;m0;;e0;;i0;;o;;k;;lfiles;;p;;x;;n">
 </treenode>
-<treenode node="saveSessionState;JS:Function Name;1422221740;f5;668;1;688;;;;vpos;;v;;aObject_;;c;;r;;d34,668;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="saveSessionState;JS:Function Name;1422221740;f5;680;1;700;;;;vpos;;v;;aObject_;;c;;r;;d34,680;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="setActiveFile;JS:Function Name;1422221740;f0;401;1;428;;;;vpos;;v;;aObject_;;c;;r;;d30,401;;b0,0;;m0;;e0;;i0;;o;;k;;lindex;;p;;x;;n">
+<treenode node="setActiveFile;JS:Function Name;1422221740;f0;415;1;440;;;;vpos;;v;;aObject_;;c;;r;;d30,415;;b0,0;;m0;;e0;;i0;;o;;k;;lindex;;p;;x;;n">
 </treenode>
-<treenode node="setupAboutButton;JS:Function Name;1422221740;f0;915;1;921;;;;vpos;;v;;aObject_;;c;;r;;d28,915;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="setupAboutButton;JS:Function Name;1422221740;f0;926;1;932;;;;vpos;;v;;aObject_;;c;;r;;d28,926;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="setupEventListeners;JS:Function Name;1422221740;f0;61;1;64;;;;vpos;;v;;aObject_;;c;;r;;d31,61;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="setupEventListeners;JS:Function Name;1422221740;f0;50;1;53;;;;vpos;;v;;aObject_;;c;;r;;d31,50;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="setupNewFileModal;JS:Function Name;1422221740;f0;304;1;338;;;;vpos;;v;;aObject_;;c;;r;;d0,305;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="setupNewFileModal;JS:Function Name;1422221740;f0;318;1;352;;;;vpos;;v;;aObject_;;c;;r;;d0,319;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="setupProjectButtons;JS:Function Name;1422221740;f0;829;1;844;;;;vpos;;v;;aObject_;;c;;r;;d31,829;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="setupProjectButtons;JS:Function Name;1422221740;f0;840;1;855;;;;vpos;;v;;aObject_;;c;;r;;d31,840;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="showAboutDialog;JS:Function Name;1422221740;f5;846;1;912;;;;vpos;;v;;aObject_;;c;;r;;d33,846;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="showAboutDialog;JS:Function Name;1422221740;f5;857;1;923;;;;vpos;;v;;aObject_;;c;;r;;d33,857;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="showContextMenu;JS:Function Name;1422221740;f0;729;1;764;;;;vpos;;v;;aObject_;;c;;r;;d43,729;;b0,0;;m0;;e0;;i0;;o;;k;;levent;;pmenuItems;;p;;x;;x;;n">
-<treenode node="closeMenu;JS:Function Name;1422221740;f36;758;3;763;;;;vpos;;v;;aObject_;;c;;r;;d59,758;;b0,0;;m0;;e0;;i0;;o;;k;;le;;p;;x;;n">
+<treenode node="showContextMenu;JS:Function Name;1422221740;f0;741;1;776;;;;vpos;;v;;aObject_;;c;;r;;d43,741;;b0,0;;m0;;e0;;i0;;o;;k;;levent;;pmenuItems;;p;;x;;x;;n">
+<treenode node="closeMenu;JS:Function Name;1422221740;f36;770;3;775;;;;vpos;;v;;aObject_;;c;;r;;d59,770;;b0,0;;m0;;e0;;i0;;o;;k;;le;;p;;x;;n">
 </treenode>
 </treenode>
-<treenode node="showSuggestions;JS:Function Name;1429129259;f0;75;3;135;;;;vpos;;v;;aObject_;;c;;r;;d2,76;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="showSuggestions;JS:Function Name;1429129259;f0;74;3;134;;;;vpos;;v;;aObject_;;c;;r;;d2,75;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="terminalInput;JS:Function Name;1429129259;f8;138;3;145;;;;vpos;;v;;a;;r;;d48,140;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="terminalInput;JS:Function Name;1429129259;f8;137;3;144;;;;vpos;;v;;a;;r;;d48,139;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="toggleTerminal;JS:Function Name;1422221740;f0;114;1;133;;;;vpos;;v;;aObject_;;c;;r;;d26,114;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="toggleTerminal;JS:Function Name;1422221740;f0;129;1;148;;;;vpos;;v;;aObject_;;c;;r;;d26,129;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+</treenode>
+<treenode node="updateAIManagerState;JS:Function Name;1422221740;f0;56;1;69;;;;vpos;;v;;aObject_;;c;;r;;d32,56;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 <treenode node="AdmZip;JS:JS Var Name;2021250080;f6;6;12;6;;;;vposadm-zip;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
@@ -179,19 +181,19 @@
 </treenode>
 <treenode node="aiService;JS:JS Var Name;2021250080;f6;7;15;7;;;;vpos./ai-service;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="appLanguage;JS:JS Var Name;2021250080;f4;13;15;13;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="appLanguage;JS:JS Var Name;2021250080;f4;14;15;14;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="autocompleteContainer;JS:JS Var Name;1429129259;f8;52;29;52;;;;vposElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
-<treenode node="className;JS:JS Var Name;1429129259;f24;53;33;53;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="autocompleteContainer;JS:JS Var Name;1429129259;f8;51;29;51;;;;vposElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="className;JS:JS Var Name;1429129259;f24;52;33;52;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="style;JS:JS Var Name;1429129259;f24;54;29;54;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
-<treenode node="cssText;JS:JS Var Name;1429129259;f30;54;37;54;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="style;JS:JS Var Name;1429129259;f24;53;29;53;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="cssText;JS:JS Var Name;1429129259;f30;53;37;53;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 </treenode>
 </treenode>
 <treenode node="codeEditorContainer;JS:JS Var Name;1422221740;f6;3;25;3;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="commandHistory;JS:JS Var Name;1429129259;f6;41;20;41;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="commandHistory;JS:JS Var Name;1429129259;f6;40;20;40;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 <treenode node="currentProject;JS:JS Var Name;1422221740;f4;13;18;13;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
@@ -203,17 +205,17 @@
 </treenode>
 <treenode node="fs;JS:JS Var Name;3992380147;f6;1;8;1;;2021250080;f6;2;8;2;;;;vposfs;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="historyIndex;JS:JS Var Name;1429129259;f6;42;18;42;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="historyIndex;JS:JS Var Name;1429129259;f6;41;18;41;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="mainWindow;JS:JS Var Name;2021250080;f4;34;14;34;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="mainWindow;JS:JS Var Name;2021250080;f4;35;14;35;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="monaco;JS:JS Var Name;2345265396;f4;8;10;8;;;;vposwindow.monaco;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="monaco;JS:JS Var Name;2345265396;f4;8;10;8;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 <treenode node="newFileBtn;JS:JS Var Name;1422221740;f6;5;16;5;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 <treenode node="notyf;JS:JS Var Name;1267604192;f8;93;13;93;;;;vposNotyf;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="oldContainer;JS:JS Var Name;1429129259;f8;46;20;46;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="oldContainer;JS:JS Var Name;1429129259;f8;45;20;45;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 <treenode node="openFiles;JS:JS Var Name;1422221740;f4;14;13;14;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
@@ -231,7 +233,7 @@
 </treenode>
 <treenode node="saveFileBtn;JS:JS Var Name;1422221740;f6;6;17;6;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="selectedIndex;JS:JS Var Name;1429129259;f6;73;19;73;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="selectedIndex;JS:JS Var Name;1429129259;f6;72;19;72;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 <treenode node="store;JS:JS Var Name;2021250080;f6;11;11;11;;;;vposStore;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
@@ -241,9 +243,9 @@
 </treenode>
 <treenode node="terminalContainer;JS:JS Var Name;1422221740;f6;8;23;8;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="terminalInputContainer;JS:JS Var Name;1429129259;f8;45;30;45;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
-<treenode node="style;JS:JS Var Name;1429129259;f25;69;30;69;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
-<treenode node="position;JS:JS Var Name;1429129259;f31;69;39;69;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="terminalInputContainer;JS:JS Var Name;1429129259;f8;44;30;44;;;;vposNode;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="style;JS:JS Var Name;1429129259;f25;68;30;68;;;;vpos;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="position;JS:JS Var Name;1429129259;f31;68;39;68;;;;vposString;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 </treenode>
 </treenode>
@@ -253,7 +255,7 @@
 </treenode>
 <treenode node="toggleTerminalBtn;JS:JS Var Name;1422221740;f6;7;23;7;;;;vposHTMLElement;;v;;a;;r;;d-1,-1;;b0,0;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
-<treenode node="translations;JS:JS Var Name;2021250080;f4;14;16;14;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
+<treenode node="translations;JS:JS Var Name;2021250080;f4;15;16;15;;;;vpos;;v;;a;;r;;d-1,-1;;b0,3;;m0;;e0;;i0;;o;;k;;l;;n">
 </treenode>
 </jstree>
 <pythontree>

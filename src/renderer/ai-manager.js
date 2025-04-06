@@ -68,7 +68,7 @@ class AIManager {
   }
   
   // Mostrar indicador de carregamento
-  showLoading(container, message = 'Processando...') {
+  showLoading(container, message = window.__('ai.processing') || 'Processando...') {
     container.innerHTML = `
       <div class="ai-loading">
         <div class="ai-loading-spinner"></div>
@@ -81,18 +81,18 @@ class AIManager {
   async openAnalyzeCodePanel() {
     if (!activeFile || !editors[activeFile.path]) return;
     
-    const { panel, content, footer } = this.createPanel('Análise de Código');
+    const { panel, content, footer } = this.createPanel(window.__('ai.modal_codeanalyze') || 'Análise de Código');
     
     // Conteúdo do painel
     content.innerHTML = `
-      <p>Analisando o arquivo: <strong>${activeFile.name}</strong></p>
+      <p>${window.__('ai.analyzecodetitle') || 'Analisando o arquivo:'} <strong>${activeFile.name}</strong></p>
       <p>${window.__('ai.analyzecodepanel') || 'A IA analisará o código quanto a boas práticas, possíveis bugs, melhorias de desempenho e segurança.'}</p>
     `;
     
     // Botões do rodapé
     footer.innerHTML = `
-      <button class="secondary" id="cancelAnalyze">Cancelar</button>
-      <button id="startAnalyze">Analisar</button>
+      <button class="secondary" id="cancelAnalyze">${window.__('buttons.cancel') || 'Cancelar'}</button>
+      <button id="startAnalyze">${window.__('buttons.analyze') || 'Analisar'}</button>
     `;
     
     // Configurar eventos
@@ -105,7 +105,7 @@ class AIManager {
       const code = editors[activeFile.path].editor.getValue();
       
       // Mostrar indicador de carregamento
-      this.showLoading(content, 'Analisando código...');
+      this.showLoading(content, window.__('ai.loadinganalyzer') || 'Analisando código...');
       
       try {
         // Fazer a chamada à API
@@ -114,23 +114,23 @@ class AIManager {
         if (result.error) {
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Erro ao analisar o código:</p>
+              <p>${window.__('ai.error_analyze') || 'Erro ao analisar o código:'}</p>
               <div class="ai-result">${result.error}</div>
             </div>
           `;
         } else {
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Resultado da análise:</p>
+              <p>${window.__('ai.result_analyze') || 'Resultado da análise:'}</p>
               <div class="ai-result">${result.analysis.replace(/\n/g, '<br>')}</div>
             </div>
-            <p><small>Tokens utilizados: ${result.tokens}</small></p>
+            <p><small>${window.__('ai.tokens_used') || 'Tokens utilizados:'} ${result.tokens}</small></p>
           `;
         }
       } catch (error) {
         content.innerHTML = `
           <div class="ai-form-group">
-            <p>Erro ao analisar o código:</p>
+            <p>${window.__('ai.error_analyze') || 'Erro ao analisar o código:'}</p>
             <div class="ai-result">${error.message}</div>
           </div>
         `;
@@ -138,7 +138,7 @@ class AIManager {
       
       // Atualizar rodapé
       footer.innerHTML = `
-        <button id="closeAnalyze">Fechar</button>
+        <button id="closeAnalyze">${window.__('buttons.close') || 'Fechar'}</button>
       `;
       
       footer.querySelector('#closeAnalyze').addEventListener('click', () => {
@@ -149,17 +149,15 @@ class AIManager {
   
   // Abrir painel para geração de código
   openGenerateCodePanel() {
-    const { panel, content, footer } = this.createPanel('Gerar Código');
-    
-    // Conteúdo do painel
+    const { panel, content, footer } = this.createPanel(window.__('ai.modal_generate') || 'Gerar Código');
     content.innerHTML = `
       <div class="ai-form-group">
-        <label for="codeDescription">Descreva o código que você deseja gerar:</label>
-        <textarea id="codeDescription" placeholder="Por exemplo: 'Crie uma função PHP que valide um formulário de contato com campos de nome, email e mensagem.'"></textarea>
+        <label for="codeDescription">${window.__('ai.generate_description') || 'Descreva o código que você deseja gerar:'}</label>
+        <textarea id="codeDescription" placeholder="${window.__('ai.generate_example') || 'Crie uma função PHP que valide um formulário de contato com campos de nome, email e mensagem.'}"></textarea>
       </div>
       
       <div class="ai-form-group">
-        <label for="codeLanguage">Linguagem:</label>
+        <label for="codeLanguage">${window.__('ai.lang') || 'Linguagem:'}</label>
         <select id="codeLanguage">
           <option value="php" selected>PHP</option>
           <option value="javascript">JavaScript</option>
@@ -169,14 +167,10 @@ class AIManager {
         </select>
       </div>
     `;
-    
-    // Botões do rodapé
     footer.innerHTML = `
-      <button class="secondary" id="cancelGenerate">Cancelar</button>
-      <button id="startGenerate">Gerar</button>
+      <button class="secondary" id="cancelGenerate">${window.__('buttons.cancel') || 'Cancelar'}</button>
+      <button id="startGenerate">${window.__('buttons.generate') || 'Gerar'}</button>
     `;
-    
-    // Configurar eventos
     footer.querySelector('#cancelGenerate').addEventListener('click', () => {
       panel.remove();
     });
@@ -186,29 +180,24 @@ class AIManager {
       const language = document.getElementById('codeLanguage').value;
       
       if (!description.trim()) {
-        alert('Por favor, forneça uma descrição do código que deseja gerar.');
+        alert(window.__('alerts.enter_code_generate') || 'Por favor, forneça uma descrição do código que deseja gerar.');
         return;
       }
       
-      // Mostrar indicador de carregamento
-      this.showLoading(content, 'Gerando código...');
+      this.showLoading(content, window.__('ai.loading_generate') || 'Gerando código...');
       
       try {
-        // Fazer a chamada à API
         const result = await window.electronAPI.generateCode(description, language);
-        
         if (result.error) {
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Erro ao gerar o código:</p>
+              <p>${window.__('ai.error_generate_code') || 'Erro ao gerar o código:'}</p>
               <div class="ai-result">${result.error}</div>
             </div>
           `;
         } else {
-          // Processar o código gerado (remover backticks de código)
           let processedCode = result.code;
           if (processedCode.includes('```')) {
-            // Extrair apenas o código de dentro das marcações de código
             const codeRegex = /```(?:\w+)?\n([\s\S]*?)```/g;
             const matches = [...processedCode.matchAll(codeRegex)];
             if (matches.length > 0) {
@@ -221,13 +210,12 @@ class AIManager {
               <p>Código gerado:</p>
               <div class="ai-result">${processedCode.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')}</div>
             </div>
-            <p><small>Tokens utilizados: ${result.tokens}</small></p>
+            <p><small>${window.__('ai.tokens_used') || 'Tokens utilizados:'} ${result.tokens}</small></p>
           `;
           
-          // Atualizar rodapé para incluir botão de criar novo arquivo
           footer.innerHTML = `
-            <button id="copyGeneratedCode">Copiar Código</button>
-            <button id="closeGenerate">Fechar</button>
+            <button id="copyGeneratedCode">${window.__('buttons.copy_code') || 'Copiar Código'}</button>
+            <button id="closeGenerate">${window.__('buttons.close') || 'Fechar'}</button>
           `;
           
           footer.querySelector('#closeGenerate').addEventListener('click', () => {
@@ -235,21 +223,19 @@ class AIManager {
           });
           
           footer.querySelector('#copyGeneratedCode').addEventListener('click', () => {
-			  // Copiar o código gerado para a área de transferência
 			  navigator.clipboard.writeText(processedCode).then(() => {
-				  // Mostrar feedback visual de que o código foi copiado
 				  const button = footer.querySelector('#copyGeneratedCode');
 				  const originalText = button.textContent;
-				  button.textContent = 'Copiado!';
+				  button.textContent = window.__('alerts.copied') || 'Copiado!';
 				  button.style.backgroundColor = '#4CAF50';
 
 				  setTimeout(() => {
 					  button.textContent = originalText;
-					  button.style.backgroundColor = ''; // Restaurar cor original
+					  button.style.backgroundColor = '';
 				  }, 2000);
 			  }).catch(err => {
 				  console.error('Erro ao copiar código:', err);
-				  alert('Falha ao copiar o código');
+				  alert(window.__('ai.error_generate_code') || 'Erro ao gerar o código:');
 			  });
 		  });
           
@@ -257,13 +243,13 @@ class AIManager {
       } catch (error) {
         content.innerHTML = `
           <div class="ai-form-group">
-            <p>Erro ao gerar o código:</p>
+            <p>${window.__('ai.error_generate_code') || 'Erro ao gerar o código:'}</p>
             <div class="ai-result">${error.message}</div>
           </div>
         `;
         
         footer.innerHTML = `
-          <button id="closeGenerate">Fechar</button>
+          <button id="closeGenerate">${window.__('buttons.close') || 'Fechar'}</button>
         `;
         
         footer.querySelector('#closeGenerate').addEventListener('click', () => {
@@ -277,18 +263,18 @@ class AIManager {
   async openDocumentCodePanel() {
     if (!activeFile || !editors[activeFile.path]) return;
     
-    const { panel, content, footer } = this.createPanel('Documentar Código');
+    const { panel, content, footer } = this.createPanel(window.__('ai.modal_document') || 'Documentar Código');
     
     // Conteúdo do painel
     content.innerHTML = `
-      <p>Documentando o arquivo: <strong>${activeFile.name}</strong></p>
-      <p>A IA adicionará comentários, docblocks e documentação ao código existente.</p>
+      <p>${window.__('ai.document_title') || 'Documentando o arquivo:'} <strong>${activeFile.name}</strong></p>
+      <p>${window.__('ai.document_description') || 'A IA adicionará comentários, docblocks e documentação ao código existente.'}</p>
     `;
     
     // Botões do rodapé
     footer.innerHTML = `
-      <button class="secondary" id="cancelDocument">Cancelar</button>
-      <button id="startDocument">Documentar</button>
+      <button class="secondary" id="cancelDocument">${window.__('buttons.cancel') || 'Cancelar'}</button>
+      <button id="startDocument">${window.__('buttons.document') || 'Documentar'}</button>
     `;
     
     // Configurar eventos
@@ -309,7 +295,7 @@ class AIManager {
       else if (extension === 'css') language = 'css';
       
       // Mostrar indicador de carregamento
-      this.showLoading(content, 'Documentando código...');
+      this.showLoading(content, window.__('ai.documenting') || 'Documentando código...');
       
       try {
         // Fazer a chamada à API
@@ -318,7 +304,7 @@ class AIManager {
         if (result.error) {
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Erro ao documentar o código:</p>
+              <p>${window.__('ai.error_generate_code') || 'Erro ao gerar o código:'}</p>
               <div class="ai-result">${result.error}</div>
             </div>
           `;
@@ -336,16 +322,16 @@ class AIManager {
           
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Código documentado:</p>
+              <p>${window.__('ai.documented_code') || 'Código documentado:'}</p>
               <div class="ai-result">${processedCode.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>')}</div>
             </div>
-            <p><small>Tokens utilizados: ${result.tokens}</small></p>
+            <p><small>${window.__('ai.tokens_used') || 'Tokens utilizados:'} ${result.tokens}</small></p>
           `;
           
           // Atualizar rodapé para incluir botão de aplicar ao arquivo atual
           footer.innerHTML = `
-            <button id="applyDocumentation">Aplicar ao Arquivo</button>
-            <button id="closeDocument">Fechar</button>
+            <button id="applyDocumentation">${window.__('buttons.apply_code') || 'Aplicar ao Arquivo'}</button>
+            <button id="closeDocument">${window.__('buttons.close') || 'Fechar'}</button>
           `;
           
           footer.querySelector('#closeDocument').addEventListener('click', () => {
@@ -361,13 +347,13 @@ class AIManager {
       } catch (error) {
         content.innerHTML = `
           <div class="ai-form-group">
-            <p>Erro ao documentar o código:</p>
+            <p>${window.__('ai.error_documented') || 'Erro ao documentar o código:'}</p>
             <div class="ai-result">${error.message}</div>
           </div>
         `;
         
         footer.innerHTML = `
-          <button id="closeDocument">Fechar</button>
+          <button id="closeDocument">${window.__('buttons.close') || 'Fechar'}</button>
         `;
         
         footer.querySelector('#closeDocument').addEventListener('click', () => {
@@ -381,7 +367,7 @@ class AIManager {
   async openExplainCodePanel() {
     if (!activeFile || !editors[activeFile.path]) return;
     
-    const { panel, content, footer } = this.createPanel('Explicar Código');
+    const { panel, content, footer } = this.createPanel(window.__('ai.modal_explain_code') || 'Explicar Código');
     
     // Verificar se há texto selecionado no editor
     let selectedCode = editors[activeFile.path].editor.getModel().getValueInRange(
@@ -395,17 +381,17 @@ class AIManager {
     
     // Conteúdo do painel
     content.innerHTML = `
-      <p>Explicando o código do arquivo: <strong>${activeFile.name}</strong></p>
-      <div class="ai-form-group">
-        <label for="codeToExplain">Código a ser explicado (você pode editar):</label>
-        <textarea id="codeToExplain">${selectedCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
-      </div>
+    <p>${window.__('ai.explaining_code') || 'Explicando o código do arquivo:'} <strong>${activeFile.name}</strong></p>
+    <div class="ai-form-group">
+    <label for="codeToExplain">${window.__('ai.explaining_code_example') || 'Código a ser explicado (você pode editar):'}</label>
+    <textarea id="codeToExplain">${selectedCode.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</textarea>
+    </div>
     `;
     
     // Botões do rodapé
     footer.innerHTML = `
-      <button class="secondary" id="cancelExplain">Cancelar</button>
-      <button id="startExplain">Explicar</button>
+      <button class="secondary" id="cancelExplain">${window.__('buttons.cancel') || 'Cancelar'}</button>
+      <button id="startExplain">${window.__('buttons.explain') || 'Explicar'}</button>
     `;
     
     // Configurar eventos
@@ -416,8 +402,8 @@ class AIManager {
     footer.querySelector('#startExplain').addEventListener('click', async () => {
       const codeToExplain = document.getElementById('codeToExplain').value;
       
-      if (!codeToExplain.trim()) {
-        alert('Por favor, forneça o código que deseja explicar.');
+	  if (!codeToExplain.trim()) {
+		  alert(window.__('alerts.wait_for_explanation') || 'Por favor, forneça o código que deseja explicar.');
         return;
       }
       
@@ -430,7 +416,7 @@ class AIManager {
       else if (extension === 'css') language = 'css';
       
       // Mostrar indicador de carregamento
-      this.showLoading(content, 'Analisando e explicando o código...');
+      this.showLoading(content, window.__('ai.explaining_loading') || 'Analisando e explicando o código...');
       
       try {
         // Fazer a chamada à API
@@ -439,23 +425,23 @@ class AIManager {
         if (result.error) {
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Erro ao explicar o código:</p>
+              <p>${window.__('ai.error_explain') || 'Erro ao explicar o código:'}</p>
               <div class="ai-result">${result.error}</div>
             </div>
           `;
         } else {
           content.innerHTML = `
             <div class="ai-form-group">
-              <p>Explicação do código:</p>
+              <p>${window.__('ai.success_explain') || 'Explicação do código:'}</p>
               <div class="ai-result">${result.explanation.replace(/\n/g, '<br>')}</div>
             </div>
-            <p><small>Tokens utilizados: ${result.tokens}</small></p>
+            <p><small>${window.__('ai.tokens_used') || 'Tokens utilizados:'} ${result.tokens}</small></p>
           `;
         }
       } catch (error) {
         content.innerHTML = `
           <div class="ai-form-group">
-            <p>Erro ao explicar o código:</p>
+            <p>${window.__('ai.error_explain') || 'Erro ao explicar o código:'}</p>
             <div class="ai-result">${error.message}</div>
           </div>
         `;
@@ -463,7 +449,7 @@ class AIManager {
       
       // Atualizar rodapé
       footer.innerHTML = `
-        <button id="closeExplain">Fechar</button>
+        <button id="closeExplain">${window.__('buttons.close') || 'Fechar'}</button>
       `;
       
       footer.querySelector('#closeExplain').addEventListener('click', () => {

@@ -7,11 +7,8 @@ const { exec, spawn } = require('child_process');
 const AdmZip = require('adm-zip');
 const aiService = require('./ai-service');
 let terminalProcess = null;
-
-// Armazenamento de configurações persistente
 const store = new Store();
 const packageJson = require('../package.json');
-
 let appLanguage = store.get('appLanguage', 'pt-BR');
 let translations = {};
 
@@ -32,11 +29,10 @@ function loadTranslations(langCode) {
 
 loadTranslations(appLanguage);
 
-// Janela principal
 let mainWindow;
 
 function createWindow() {
-  // Criar a janela do navegador
+
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
@@ -47,37 +43,30 @@ function createWindow() {
     }
   });
 
-  // Carregar o arquivo HTML
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
   mainWindow.setMenu(null);
-  // mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 
-  // Evento quando a janela é fechada
   mainWindow.on('closed', () => {
     mainWindow = null;
   });
 }
 
-// Quando o Electron estiver pronto
 app.whenReady().then(() => {
   createWindow();
-
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
 
-// Sair quando todas as janelas estiverem fechadas (exceto no macOS)
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
 
-// Manipulação de eventos IPC (comunicação entre processos)
-
 ipcMain.handle('get-app-info', () => {
   return {
     name: 'PHP Electron Editor',
-    version: packageJson.version || '1.0.0', // Versão do seu projeto
+    version: packageJson.version || '1.0.0',
     author: 'Gianck Luiz - Humolot',
     company: 'GoodBits Tech Panamá',
     electronVersion: process.versions.electron,
@@ -94,7 +83,7 @@ ipcMain.handle('save-session-state', async (event, state) => {
     store.set('sessionState', state);
     return true;
   } catch (error) {
-    console.error('Erro ao salvar estado da sessão:', error);
+    console.error('Error saving session state:', error);
     return false;
   }
 });
@@ -103,12 +92,11 @@ ipcMain.handle('load-session-state', async () => {
   try {
     return store.get('sessionState');
   } catch (error) {
-    console.error('Erro ao carregar estado da sessão:', error);
+    console.error('Error loading session state:', error);
     return null;
   }
 });
 
-// Abrir um diretório de projeto
 ipcMain.handle('open-directory', async () => {
   const result = await dialog.showOpenDialog(mainWindow, {
     properties: ['openDirectory']
@@ -123,7 +111,6 @@ ipcMain.handle('open-directory', async () => {
   return null;
 });
 
-// Ler arquivos em um diretório
 ipcMain.handle('read-directory', async (event, dir) => {
   try {
     const items = await fs.promises.readdir(dir, { withFileTypes: true });
@@ -134,7 +121,7 @@ ipcMain.handle('read-directory', async (event, dir) => {
           name: item.name,
           path: path,
           type: 'directory',
-          children: [] // Carregaremos sob demanda
+          children: []
         };
       } else {
         return {
@@ -147,82 +134,69 @@ ipcMain.handle('read-directory', async (event, dir) => {
     }));
     return fileStructure;
   } catch (error) {
-    console.error('Erro ao ler diretório:', error);
+    console.error('Error reading directory:', error);
     return [];
   }
 });
 
-// Ler conteúdo de um arquivo
 ipcMain.handle('read-file', async (event, filePath) => {
   try {
     const content = await fs.promises.readFile(filePath, 'utf8');
     return content;
   } catch (error) {
-    console.error('Erro ao ler arquivo:', error);
+    console.error('Error reading file:', error);
     return null;
   }
 });
 
-// Salvar conteúdo em um arquivo
 ipcMain.handle('save-file', async (event, filePath, content) => {
   try {
     await fs.promises.writeFile(filePath, content, 'utf8');
     return true;
   } catch (error) {
-    console.error('Erro ao salvar arquivo:', error);
+    console.error('Error saving file:', error);
     return false;
   }
 });
 
-// Criar novo arquivo
 ipcMain.handle('create-file', async (event, dirPath, fileName) => {
   try {
     const filePath = path.join(dirPath, fileName);
-    fs.writeFileSync(filePath, '');  // Criar arquivo vazio
-    
-    // Usar o currentProject salvo na store para garantir a atualização correta
+    fs.writeFileSync(filePath, '');
     const projectRoot = store.get('lastProjectPath');
-    
     if (projectRoot) {
       const updatedFiles = await readDirectoryStructure(projectRoot);
       event.sender.send('file-created', updatedFiles);
     }
-    
     return filePath;
   } catch (error) {
-    console.error('Erro ao criar arquivo:', error);
+    console.error('Error creating file:', error);
     throw error;
   }
 });
 
-// Renomear arquivo
 ipcMain.handle('rename-file', async (event, oldPath, newName) => {
   try {
     const newPath = path.join(path.dirname(oldPath), newName);
     fs.renameSync(oldPath, newPath);
-    return newPath; // Retorna o novo caminho
+    return newPath;
   } catch (err) {
-    console.error('Erro ao renomear arquivo:', err);
+    console.error('Error renaming file:', err);
     throw err;
   }
 });
 
-//Delete 
 ipcMain.handle('delete-file', async (event, filePath) => {
   try {
-    fs.unlinkSync(filePath);  // Exclui o arquivo
-    
-    // Usar o currentProject salvo na store para garantir a atualização correta
+    fs.unlinkSync(filePath);
     const projectRoot = store.get('lastProjectPath');
-    
     if (projectRoot) {
       const updatedFiles = await readDirectoryStructure(projectRoot);
       event.sender.send('file-deleted', updatedFiles);
     }
-    
     return true;
   } catch (error) {
-    console.error('Erro ao excluir arquivo:', error);
+    console.error('Error deleting file:', error);
     throw error;
   }
 });
@@ -250,27 +224,23 @@ async function readDirectoryStructure(dir) {
   return fileStructure;
 }
 
-// Nova abordagem para terminal interativo usando spawn
 ipcMain.handle('create-terminal', async (event, workingDir) => {
   try {
-    // Determinar qual shell usar com base no sistema operacional
+    
     const shell = process.platform === 'win32' ? 'powershell.exe' : 'bash';
     const cwd = workingDir || process.env.HOME || process.env.USERPROFILE;
     
-    // Se já existir um processo de terminal, encerre-o
     if (terminalProcess) {
       terminalProcess.kill();
       terminalProcess = null;
     }
-    
-    // Criar um novo processo de terminal
+
     terminalProcess = spawn(shell, [], {
       cwd: cwd,
       env: process.env,
       shell: true
     });
     
-    // Configurar manipuladores de eventos para stdout e stderr
     terminalProcess.stdout.on('data', (data) => {
       if (mainWindow && !mainWindow.isDestroyed()) {
         mainWindow.webContents.send('terminal-data', data.toString());
@@ -283,41 +253,37 @@ ipcMain.handle('create-terminal', async (event, workingDir) => {
       }
     });
     
-    // Lidar com o encerramento do processo
     terminalProcess.on('close', (code) => {
-      if (mainWindow && !mainWindow.isDestroyed()) {
-        mainWindow.webContents.send('terminal-data', `\r\nProcesso encerrado com código ${code || 0}\r\n`);
+	  if (mainWindow && !mainWindow.isDestroyed()) {
+		  mainWindow.webContents.send('terminal-data', `\r\nProcess closed with code ${code || 0}\r\n`);
       }
       terminalProcess = null;
     });
     
-    // Enviar mensagem inicial para o terminal
-    if (mainWindow && !mainWindow.isDestroyed()) {
-      mainWindow.webContents.send('terminal-data', `Terminal iniciado em ${cwd}\r\n`);
+	if (mainWindow && !mainWindow.isDestroyed()) {
+		mainWindow.webContents.send('terminal-data', `Terminal started in ${cwd}\r\n`);
     }
     
     return true;
   } catch (error) {
-    console.error('Erro ao criar terminal:', error);
+    console.error('Error creating terminal:', error);
     return false;
   }
 });
 
-// Escrever para o terminal
 ipcMain.handle('write-to-terminal', async (event, data) => {
   if (terminalProcess && terminalProcess.stdin) {
     try {
       terminalProcess.stdin.write(data);
       return true;
     } catch (error) {
-      console.error('Erro ao escrever no terminal:', error);
+      console.error('Error writing to terminal:', error);
       return false;
     }
   }
   return false;
 });
 
-// Fechar o terminal
 ipcMain.handle('close-terminal', async () => {
   if (terminalProcess) {
     try {
@@ -325,34 +291,30 @@ ipcMain.handle('close-terminal', async () => {
       terminalProcess = null;
       return true;
     } catch (error) {
-      console.error('Erro ao fechar terminal:', error);
+      console.error('Error closing terminal:', error);
       return false;
     }
   }
   return false;
 });
 
-// Recursos de IA
-
-// Analisar código
 ipcMain.handle('analyze-code', async (event, filePath, code) => {
   try {
     const result = await aiService.analyzeCode(filePath, code);
     return result;
   } catch (error) {
-    console.error('Erro ao analisar código:', error);
-    return { error: `Erro ao analisar código: ${error.message}` };
+    console.error('Error parsing code:', error);
+    return { error: `Error parsing code: ${error.message}` };
   }
 });
 
-// Gerar código
 ipcMain.handle('generate-code', async (event, description, language) => {
   try {
     const result = await aiService.generateCode(description, language);
     return result;
   } catch (error) {
-    console.error('Erro ao gerar código:', error);
-    return { error: `Erro ao gerar código: ${error.message}` };
+    console.error('Error generating code:', error);
+    return { error: `Error generating code: ${error.message}` };
   }
 });
 
@@ -360,29 +322,26 @@ ipcMain.handle('close-app', () => {
   app.quit();
 });
 
-// Documentar código
 ipcMain.handle('document-code', async (event, code, language) => {
   try {
     const result = await aiService.documentCode(code, language);
     return result;
   } catch (error) {
-    console.error('Erro ao documentar código:', error);
-    return { error: `Erro ao documentar código: ${error.message}` };
+    console.error('Error documenting code:', error);
+    return { error: `Error documenting code: ${error.message}` };
   }
 });
 
-// Explicar código
 ipcMain.handle('explain-code', async (event, code, language) => {
   try {
     const result = await aiService.explainCode(code, language);
     return result;
   } catch (error) {
-    console.error('Erro ao explicar código:', error);
-    return { error: `Erro ao explicar código: ${error.message}` };
+    console.error('Error explaining code:', error);
+    return { error: `Error explaining code: ${error.message}` };
   }
 });
 
-// Executar um comando simples no terminal
 ipcMain.handle('execute-command', async (event, command, cwd) => {
   return new Promise((resolve) => {
     const childProcess = spawn(command, [], {
@@ -412,7 +371,6 @@ ipcMain.handle('execute-command', async (event, command, cwd) => {
   });
 });
 
-// Iniciar um shell interativo
 ipcMain.handle('start-terminal', async (event, cwd) => {
   if (terminalProcess) {
     terminalProcess.kill();
@@ -427,7 +385,6 @@ ipcMain.handle('start-terminal', async (event, cwd) => {
     shell: true
   });
   
-  // Encaminhar saída para o renderer
   terminalProcess.stdout.on('data', (data) => {
     if (mainWindow && !mainWindow.isDestroyed()) {
       mainWindow.webContents.send('terminal-output', data.toString());
@@ -450,7 +407,6 @@ ipcMain.handle('start-terminal', async (event, cwd) => {
   return true;
 });
 
-// Enviar entrada para o terminal
 ipcMain.handle('send-to-terminal', async (event, data) => {
   if (terminalProcess && terminalProcess.stdin) {
     terminalProcess.stdin.write(data);
@@ -465,7 +421,6 @@ ipcMain.on('terminal-command', (event, command) => {
   }
 });
 
-// Encerrar o terminal
 ipcMain.handle('kill-terminal', async () => {
   if (terminalProcess) {
     terminalProcess.kill();
@@ -499,7 +454,7 @@ ipcMain.handle('exportProjectToZip', async (event, projectPath, exportPath) => {
     
     return true;
   } catch (error) {
-    console.error('Erro ao exportar projeto:', error);
+    console.error('Error exporting project:', error);
     return false;
   }
 });
@@ -510,12 +465,11 @@ ipcMain.handle('importProjectFromZip', async (event, zipPath, destinationPath) =
     zip.extractAllTo(destinationPath, true);
     return true;
   } catch (error) {
-    console.error('Erro ao importar projeto:', error);
+    console.error('Error importing project:', error);
     return false;
   }
 });
 
-// No main process
 ipcMain.handle('show-save-dialog', async (event, options) => {
   try {
     const result = await dialog.showSaveDialog(mainWindow, {
@@ -524,7 +478,7 @@ ipcMain.handle('show-save-dialog', async (event, options) => {
     });
     return result.filePath || null;
   } catch (error) {
-    console.error('Erro no save dialog:', error);
+    console.error('Error in save dialog:', error);
     return null;
   }
 });
@@ -534,36 +488,32 @@ ipcMain.handle('show-open-dialog', async (event, options) => {
     const result = await dialog.showOpenDialog(mainWindow, options);
     return result.filePaths[0] || null;
   } catch (error) {
-    console.error('Erro no open dialog:', error);
+    console.error('Error in open dialog:', error);
     return null;
   }
 });
 
-// Ler arquivo de idioma
 ipcMain.handle('read-language-file', async (event, langCode) => {
   try {
     const filePath = path.join(__dirname, 'i18n', `${langCode}.json`);
     const content = await fs.promises.readFile(filePath, 'utf8');
     return JSON.parse(content);
   } catch (error) {
-    console.error(`Erro ao ler arquivo de idioma ${langCode}:`, error);
+    console.error(`Error reading language file ${langCode}:`, error);
     return null;
   }
 });
 
-// Obter idiomas disponíveis
 ipcMain.handle('get-available-languages', async () => {
   try {
     const i18nDir = path.join(__dirname, 'i18n');
     const files = await fs.promises.readdir(i18nDir);
     
-    // Filtrar apenas arquivos JSON e extrair códigos de idioma
     const languages = files
       .filter(file => file.endsWith('.json'))
       .map(file => {
         const langCode = path.basename(file, '.json');
         
-        // Tentar ler o arquivo para obter o nome do idioma
         try {
           const content = fs.readFileSync(path.join(i18nDir, file), 'utf8');
           const data = JSON.parse(content);
@@ -578,35 +528,31 @@ ipcMain.handle('get-available-languages', async () => {
     
     return languages;
   } catch (error) {
-    console.error('Erro ao listar idiomas disponíveis:', error);
+    console.error('Error listing available languages:', error);
     return [];
   }
 });
 
-// Definir idioma do aplicativo
 ipcMain.handle('set-app-language', async (event, langCode) => {
   try {
-    // Verificar se o arquivo de idioma existe
+
     const filePath = path.join(__dirname, 'i18n', `${langCode}.json`);
     if (!fs.existsSync(filePath)) {
-      throw new Error(`Arquivo de idioma não encontrado: ${langCode}`);
+      throw new Error(`Language file not found: ${langCode}`);
     }
     
-    // Salvar a preferência de idioma
     appLanguage = langCode;
     store.set('appLanguage', langCode);
     
-    // Carregar as traduções
     loadTranslations(langCode);
     
-    // Atualizar o título da janela se houver uma tradução para isso
     if (mainWindow && translations.appTitle) {
       mainWindow.setTitle(translations.appTitle);
     }
     
     return true;
   } catch (error) {
-    console.error('Erro ao definir idioma do aplicativo:', error);
+    console.error('Error setting application language:', error);
     return false;
   }
 });

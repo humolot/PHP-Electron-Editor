@@ -4,6 +4,40 @@
   <PM_URL><![CDATA[http://localhost/src/]]></PM_URL>
   <PM_HOME_URL><![CDATA[http://localhost/src/]]></PM_HOME_URL>
   <PM_LIBS><![CDATA[]]></PM_LIBS>
+  <PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION>
+  <PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR>
+  <PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE>
   <PM_LANGUAGE><![CDATA[]]></PM_LANGUAGE>
  </settings>
+ <removed value=";"/>
+ <added value=""/>
+ <lastopfiles>
+  <file name="D:\PEditor\src\main.js"/>
+  <file name="D:\PEditor\src\renderer\index.js"/>
+  <file name="D:\PEditor\src\renderer\index.html"/>
+  <file name="D:\PEditor\src\renderer\editor.js"/>
+  <file name="D:\PEditor\src\renderer\ai-manager.js"/>
+  <lastactivefile name=""/>
+ </lastopfiles>
+ <errors version="1.12.0"/>
+ <laravael/>
+ <smartyassings/>
+ <twigtemplate/>
+ <yiidata/>
+ <todoblock>
+  <todofile name="D:\PEditor\src\renderer\ai-manager.js">
+   <todo pos="33;390" name="todo o código"/>
+  </todofile>
+  <todofile name="D:\PEditor\src\renderer\i18n-manager.js">
+   <todo pos="15;92" name="todos os elementos com atributo data-i18n"/>
+  </todofile>
+  <todofile name="D:\PEditor\src\renderer\index.js">
+   <todo pos="12;421" name="todos os editores"/>
+   <todo pos="51;581" name="todo o explorador"/>
+   <todo pos="45;587" name="todo o explorador"/>
+   <todo pos="16;613" name="todo o explorador de arquivos"/>
+  </todofile>
+ </todoblock>
+ <dbgurls/>
+ <lasttime value="1743932378"/>
 </project>
